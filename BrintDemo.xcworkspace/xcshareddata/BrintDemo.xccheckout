@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>5186DB29-8904-4F74-9EBA-7B448626E2C0</string>
+	<key>IDESourceControlProjectName</key>
+	<string>BrintDemo</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>D3D1A6199FD84BCD179490E0DE31CADC36A0918D</key>
+		<string>https://github.com/Pradeep-kn/BrintApp.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>BrintDemo.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>D3D1A6199FD84BCD179490E0DE31CADC36A0918D</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/Pradeep-kn/BrintApp.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>D3D1A6199FD84BCD179490E0DE31CADC36A0918D</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D3D1A6199FD84BCD179490E0DE31CADC36A0918D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>BrintDemo</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -1,0 +1,28 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+
+    #define DBLog(fmt, ...)  if (1) { NSLog((@"[BrintDemo] %s/%d " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__); }
+
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+    #import "UIImage+animatedGIF.h"
+    #import "BrinDemoMasterCell.h"
+    #import <QuartzCore/QuartzCore.h>
+    #import "BDColours.h"
+    #import "BrinDemoConstant.h"
+    #import "NSString+LocalizedString.h"
+    #import "BDUtility.h"
+    #import <CoreGraphics/CoreGraphics.h>
+    #import "BrinDemoCollectionViewController.h"
+#endif
