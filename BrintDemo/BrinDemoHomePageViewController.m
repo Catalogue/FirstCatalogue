@@ -50,12 +50,16 @@
 {
     HomeScreenApi *homeScreensApi = [[HomeScreenApi alloc] init];
     _imagesArray = [[NSMutableArray alloc] init];
-    [[WebService sharedInstance] getRequest:homeScreensApi andCallback:^(APIBase *apiObject, id JSON, NSError *error) {
-        for (HomeScreenDetails *homeScreensDetails in homeScreensApi.homeScreenArray) {
-            //            UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:offersDetails.offer_image]]];
-            [_imagesArray addObject:homeScreensDetails];
+    homeScreensApi.apiType = Get;
+    homeScreensApi.cacheing = CACHE_PERSISTANT;
+    
+    [[DataUtility sharedInstance] dataForObject:homeScreensApi response:^(APIBase *response, DataType dataType) {
+        if (homeScreensApi.errorCode == 0) {
+            for (HomeScreenDetails *homeScreensDetails in homeScreensApi.homeScreenArray) {
+                //            UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:offersDetails.offer_image]]];
+                [_imagesArray addObject:homeScreensDetails];
+            }
         }
-        //        [self offersImageAnimationWithImages:_imagesArray];
     }];
 }
 

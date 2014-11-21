@@ -60,7 +60,7 @@
         return nil;
     }
     
-    if (API_SUCESS != [self.statusCode integerValue]) {
+    if (API_SUCESS != self.statusCode) {
         return nil;
     }
     

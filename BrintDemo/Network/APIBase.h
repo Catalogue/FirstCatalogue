@@ -9,14 +9,21 @@
 #import <Foundation/Foundation.h>
 #import "APIDefines.h"
 #import "ParserUtility.h"
+#import "Jastor.h"
 
-@interface APIBase : NSObject
+@interface APIBase : Jastor
 
-@property (nonatomic, strong) NSNumber *statusCode;
-@property (nonatomic, strong) NSNumber *errorCode;
-@property (nonatomic, strong) NSString *message;
-@property (nonatomic, strong) NSString *errormessage;
-@property (nonatomic, strong) NSString *sessionId;
+@property (nonatomic) NSInteger errorCode;
+@property (nonatomic) NSInteger statusCode;
+@property (nonatomic, strong) NSString *errorMessage;
+@property (nonatomic,strong) NSMutableDictionary *parameters;
+@property (nonatomic,strong) NSMutableDictionary *bodyParameters;
+@property (nonatomic,strong) NSMutableDictionary *headerParams;
+@property (nonatomic, strong) NSDate *cacheTimeStamp;
+@property (nonatomic, strong) NSString *contentType;
+@property (nonatomic, strong) NSData *binaryData;
+@property (nonatomic) HTTPMethodType apiType;
+@property (nonatomic) CachePolicy cacheing;
 
 - (NSString *)apiName;
 
@@ -27,5 +34,8 @@
 - (void)displayError;
 
 - (void)checkForNilValues;
+
+
+- (void)apiCallDone:(BOOL)isApiCallDone customizeResponseOrDoSomeJob:(APIBase *)apiObject;
 
 @end

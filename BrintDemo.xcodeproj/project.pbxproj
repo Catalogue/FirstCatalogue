@@ -21,10 +21,15 @@
 		27236078196ACA8100CA26B4 /* closest-store@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2723606C196ACA8100CA26B4 /* closest-store@2x.png */; };
 		272515F919FE6EFF008F355B /* HomeScreenApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 272515F819FE6EFF008F355B /* HomeScreenApi.m */; };
 		272515FC19FE6F1A008F355B /* HomeScreenDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 272515FB19FE6F1A008F355B /* HomeScreenDetails.m */; };
+		273A1D4A1A1D2A4500EE833F /* DataStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 273A1D491A1D2A4500EE833F /* DataStorage.m */; };
+		273A1D4D1A1D3ACB00EE833F /* DataUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 273A1D4C1A1D3ACB00EE833F /* DataUtility.m */; };
 		27470E471965E9F100EF4D06 /* Flickr.m in Sources */ = {isa = PBXBuildFile; fileRef = 27470E441965E9F100EF4D06 /* Flickr.m */; };
 		27470E481965E9F100EF4D06 /* FlickrPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 27470E461965E9F100EF4D06 /* FlickrPhoto.m */; };
 		27470E5B1965FE6800EF4D06 /* BrinDemoCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27470E591965FE6800EF4D06 /* BrinDemoCollectionViewController.m */; };
+		274860B91A1D27B100D5317F /* Cache.m in Sources */ = {isa = PBXBuildFile; fileRef = 274860B81A1D27B100D5317F /* Cache.m */; };
 		275899FC19E7FC9B00BB28D0 /* ValidateApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 275899FB19E7FC9B00BB28D0 /* ValidateApi.m */; };
+		2769C9F81A1E9053005050E1 /* Jastor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2769C9F51A1E9053005050E1 /* Jastor.m */; };
+		2769C9F91A1E9053005050E1 /* JastorRuntimeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2769C9F71A1E9053005050E1 /* JastorRuntimeHelper.m */; };
 		276E96091A1B912B000E371D /* PICoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 276E96081A1B912B000E371D /* PICoreDataManager.m */; };
 		276E960C1A1B92B5000E371D /* BDModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 276E960A1A1B92B5000E371D /* BDModel.xcdatamodeld */; };
 		276E960E1A1B92EA000E371D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 276E960D1A1B92EA000E371D /* CoreData.framework */; };
@@ -241,14 +246,24 @@
 		272515F819FE6EFF008F355B /* HomeScreenApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeScreenApi.m; sourceTree = "<group>"; };
 		272515FA19FE6F1A008F355B /* HomeScreenDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeScreenDetails.h; sourceTree = "<group>"; };
 		272515FB19FE6F1A008F355B /* HomeScreenDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeScreenDetails.m; sourceTree = "<group>"; };
+		273A1D481A1D2A4500EE833F /* DataStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataStorage.h; sourceTree = "<group>"; };
+		273A1D491A1D2A4500EE833F /* DataStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataStorage.m; sourceTree = "<group>"; };
+		273A1D4B1A1D3ACB00EE833F /* DataUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataUtility.h; sourceTree = "<group>"; };
+		273A1D4C1A1D3ACB00EE833F /* DataUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataUtility.m; sourceTree = "<group>"; };
 		27470E431965E9F100EF4D06 /* Flickr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Flickr.h; path = ../Flickr.h; sourceTree = "<group>"; };
 		27470E441965E9F100EF4D06 /* Flickr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Flickr.m; path = ../Flickr.m; sourceTree = "<group>"; };
 		27470E451965E9F100EF4D06 /* FlickrPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlickrPhoto.h; path = ../FlickrPhoto.h; sourceTree = "<group>"; };
 		27470E461965E9F100EF4D06 /* FlickrPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FlickrPhoto.m; path = ../FlickrPhoto.m; sourceTree = "<group>"; };
 		27470E581965FE6800EF4D06 /* BrinDemoCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrinDemoCollectionViewController.h; sourceTree = "<group>"; };
 		27470E591965FE6800EF4D06 /* BrinDemoCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrinDemoCollectionViewController.m; sourceTree = "<group>"; };
+		274860B71A1D27B100D5317F /* Cache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cache.h; sourceTree = "<group>"; };
+		274860B81A1D27B100D5317F /* Cache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cache.m; sourceTree = "<group>"; };
 		275899FA19E7FC9B00BB28D0 /* ValidateApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValidateApi.h; sourceTree = "<group>"; };
 		275899FB19E7FC9B00BB28D0 /* ValidateApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValidateApi.m; sourceTree = "<group>"; };
+		2769C9F41A1E9053005050E1 /* Jastor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Jastor.h; sourceTree = "<group>"; };
+		2769C9F51A1E9053005050E1 /* Jastor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Jastor.m; sourceTree = "<group>"; };
+		2769C9F61A1E9053005050E1 /* JastorRuntimeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JastorRuntimeHelper.h; sourceTree = "<group>"; };
+		2769C9F71A1E9053005050E1 /* JastorRuntimeHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JastorRuntimeHelper.m; sourceTree = "<group>"; };
 		276E96071A1B912B000E371D /* PICoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PICoreDataManager.h; sourceTree = "<group>"; };
 		276E96081A1B912B000E371D /* PICoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PICoreDataManager.m; sourceTree = "<group>"; };
 		276E960B1A1B92B5000E371D /* BDModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BDModel.xcdatamodel; sourceTree = "<group>"; };
@@ -584,6 +599,17 @@
 				275899FB19E7FC9B00BB28D0 /* ValidateApi.m */,
 			);
 			path = ValidateApi;
+			sourceTree = "<group>";
+		};
+		2769C9F31A1E9053005050E1 /* Jastor */ = {
+			isa = PBXGroup;
+			children = (
+				2769C9F41A1E9053005050E1 /* Jastor.h */,
+				2769C9F51A1E9053005050E1 /* Jastor.m */,
+				2769C9F61A1E9053005050E1 /* JastorRuntimeHelper.h */,
+				2769C9F71A1E9053005050E1 /* JastorRuntimeHelper.m */,
+			);
+			path = Jastor;
 			sourceTree = "<group>";
 		};
 		278739E11940E73900973989 /* ViewControllers */ = {
@@ -1140,10 +1166,16 @@
 		ED3E278A19D5DF2D00B02438 /* Utility Classes */ = {
 			isa = PBXGroup;
 			children = (
+				273A1D481A1D2A4500EE833F /* DataStorage.h */,
+				273A1D491A1D2A4500EE833F /* DataStorage.m */,
 				ED3E278B19D5DF5500B02438 /* HelperMethods.h */,
 				ED3E278C19D5DF5500B02438 /* HelperMethods.m */,
 				276E96071A1B912B000E371D /* PICoreDataManager.h */,
 				276E96081A1B912B000E371D /* PICoreDataManager.m */,
+				274860B71A1D27B100D5317F /* Cache.h */,
+				274860B81A1D27B100D5317F /* Cache.m */,
+				273A1D4B1A1D3ACB00EE833F /* DataUtility.h */,
+				273A1D4C1A1D3ACB00EE833F /* DataUtility.m */,
 			);
 			path = "Utility Classes";
 			sourceTree = "<group>";
@@ -1258,6 +1290,7 @@
 		EDE56B96194784A400D68A33 /* Thrid Party Code */ = {
 			isa = PBXGroup;
 			children = (
+				2769C9F31A1E9053005050E1 /* Jastor */,
 				ED3E275D19D5DB1B00B02438 /* SDImageCache */,
 				EDC3784E198FF979009BAF2C /* UAModelPanel */,
 				ED7A1C6E195C976500679B47 /* iCarousel */,
@@ -1558,10 +1591,12 @@
 				ED3E279719D6CFE500B02438 /* OffersDetails.m in Sources */,
 				27C4982219E69456002CC2DD /* SignUpDetails.m in Sources */,
 				27470E471965E9F100EF4D06 /* Flickr.m in Sources */,
+				2769C9F81A1E9053005050E1 /* Jastor.m in Sources */,
 				278739E91940E7D100973989 /* BrinDemoGoldSplitViewController.m in Sources */,
 				27B094A219F060A000444D0E /* LoginDetails.m in Sources */,
 				27873A081940EA1100973989 /* BrinDemoPlatinumMasterViewController.m in Sources */,
 				EDC37861198FF9EA009BAF2C /* UATitledModalPanel.m in Sources */,
+				2769C9F91A1E9053005050E1 /* JastorRuntimeHelper.m in Sources */,
 				27CC4DBB194249CD00DC2034 /* BrinDemoMasterCell.m in Sources */,
 				EDC37860198FF9EA009BAF2C /* UAModalPanel.m in Sources */,
 				ED3E277219D5DB4A00B02438 /* MKAnnotationView+WebCache.m in Sources */,
@@ -1573,6 +1608,7 @@
 				ED3E278719D5DDB200B02438 /* ParserUtility.m in Sources */,
 				EDC37870198FFA05009BAF2C /* UIView+JMNoise.m in Sources */,
 				EDC37859198FF9D7009BAF2C /* UAGradientBackground.m in Sources */,
+				273A1D4A1A1D2A4500EE833F /* DataStorage.m in Sources */,
 				ED5366B4197C19F80025B774 /* BDCollectionDetailVC.m in Sources */,
 				27873A0B1940EA3300973989 /* BrinDemoSilverMasterViewController.m in Sources */,
 				27C79C7D192E73CE003681BE /* BrinDemoAppDelegate.m in Sources */,
@@ -1593,6 +1629,7 @@
 				ED3E278219D5DD6300B02438 /* WebService.m in Sources */,
 				ED3E277819D5DB4A00B02438 /* UIButton+WebCache.m in Sources */,
 				EDAAA2D819A0E0BE003C3411 /* BTGlassScrollView.m in Sources */,
+				273A1D4D1A1D3ACB00EE833F /* DataUtility.m in Sources */,
 				ED3E277919D5DB4A00B02438 /* UIImageView+WebCache.m in Sources */,
 				EDF208AC198E01BB008B368B /* BDScrollerCell.m in Sources */,
 				27B2B9831961E85C00731835 /* BrinDemoGoldDetailsListViewController.m in Sources */,
@@ -1604,6 +1641,7 @@
 				27873A141940ED4A00973989 /* BrinDemoSilverDetailViewController.m in Sources */,
 				ED7A1C77195CAD6F00679B47 /* BDCollectionView.m in Sources */,
 				27C4982519E6946F002CC2DD /* SignUpApi.m in Sources */,
+				274860B91A1D27B100D5317F /* Cache.m in Sources */,
 				ED5366BC197C21780025B774 /* NSString+LocalizedString.m in Sources */,
 				27873A191940F78800973989 /* UIImage+animatedGIF.m in Sources */,
 				27D4A7F01A0BEAB300C7A94F /* BIHomeViewController.m in Sources */,

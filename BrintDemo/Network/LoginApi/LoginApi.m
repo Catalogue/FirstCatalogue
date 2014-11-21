@@ -58,23 +58,14 @@
         return nil;
     }
     
-    if (API_SUCESS != [self.statusCode integerValue]) {
+    if (API_SUCESS != self.statusCode) {
         return nil;
     }
-    
-//    NSDictionary *responseDict = [ParserUtility JSONObjectValue:response forKey:kResult];
-//    NSString *value = [ParserUtility JSONObjectValue:responseDict forKey:kStatusCode];
-//    self.statusCode = [NSNumber numberWithInteger:[value integerValue]];
-//    self.errormessage = [ParserUtility JSONObjectValue:responseDict forKey:kErrorMessage];
-//    value = [ParserUtility JSONObjectValue:responseDict forKey:kErrorCode];
-//    self.errorCode = [NSNumber numberWithInteger:[value integerValue]];
-    
-//    NSLog(@"Login Response = %@", responseDict);
     return nil;
 }
 
 
-- (LoginDetails *)parsedOffersDetails:(NSDictionary *)offersDict
+- (LoginDetails *)parsedOffersDetails:(NSDictionary *)loginDict
 {
     LoginDetails *details = [[LoginDetails alloc] init];
     return details;

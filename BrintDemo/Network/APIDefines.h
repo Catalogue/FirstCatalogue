@@ -44,13 +44,13 @@ static NSString * const kStoresApiUrl = @"get_stores.php";
 
 static NSString * const kPostStoresApiUrl = @"post_stores.php";
 
-static NSString * const kStatusCode = @"status Code";
+static NSString * const kStatusCode = @"statusCode";
 
 static NSString * const kErrorCode = @"errorCode";
 
-static NSString * const kErrorMessage = @"error Message";
+static NSString * const kErrorMessage = @"errorMessage";
 
-static NSString * const kStatusMessage = @"Result Message";
+static NSString * const kStatusMessage = @"resultMessage";
 
 static NSString * const kResult = @"Result";
 

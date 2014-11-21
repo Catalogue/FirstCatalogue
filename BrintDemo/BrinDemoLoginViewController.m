@@ -97,8 +97,11 @@
 
     ForgotPasswordApi *forgotPasswordApi = [[ForgotPasswordApi alloc] init];
     forgotPasswordApi.email = self.forgotPasswordTextField.text;
-    [[WebService sharedInstance] getRequest:forgotPasswordApi andCallback:^(APIBase *apiObject, id JSON, NSError *error) {
-        if ([forgotPasswordApi.errorCode isEqualToNumber:[NSNumber numberWithInteger:0]]) {
+    forgotPasswordApi.apiType = Get;
+    forgotPasswordApi.cacheing = CACHE_PERSISTANT;
+    
+    [[DataUtility sharedInstance] dataForObject:forgotPasswordApi response:^(APIBase *response, DataType dataType) {
+        if (forgotPasswordApi.errorCode == 0) {
             [UIView animateWithDuration:1.0 delay:0.0 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
                 self.loginView.hidden = NO;
                 self.forgotPasswordView.hidden = YES;
@@ -114,21 +117,20 @@
 
 - (void)callLoginApi
 {
-    BrinDemoAppDelegate *appDelegate = (BrinDemoAppDelegate *)[[UIApplication sharedApplication] delegate];
-    [appDelegate showHomeView];
-    
-//    LoginApi *loginApi = [[LoginApi alloc] init];
-//    loginApi.loginDetails = [[LoginDetails alloc] init];
-//    loginApi.loginDetails.username = self.loginUsernameTxtField.text;
-//    loginApi.loginDetails.password = self.loginPasswordTxtField.text;
-//    loginApi.loginDetails.email = self.loginUsernameTxtField.text;
-//    
-//    [[WebService sharedInstance] postRequest:loginApi andCallback:^(APIBase *apiObject, id JSON, NSError *error) {
-//        if ([loginApi.errorCode isEqualToNumber:[NSNumber numberWithInteger:0]]) {
-//            BrinDemoAppDelegate *appDelegate = (BrinDemoAppDelegate *)[[UIApplication sharedApplication] delegate];
-//            [appDelegate showHomeView];
-//        }
-//    }];
+    LoginApi *loginApi = [[LoginApi alloc] init];
+    loginApi.loginDetails = [[LoginDetails alloc] init];
+    loginApi.loginDetails.username = self.loginUsernameTxtField.text;
+    loginApi.loginDetails.password = self.loginPasswordTxtField.text;
+    loginApi.loginDetails.email = self.loginUsernameTxtField.text;
+    loginApi.apiType = Post;
+    loginApi.cacheing = CACHE_PERSISTANT;
+
+    [[DataUtility sharedInstance] dataForObject:loginApi response:^(APIBase *response, DataType dataType) {
+        if (loginApi.errorCode == 0) {
+            BrinDemoAppDelegate *appDelegate = (BrinDemoAppDelegate *)[[UIApplication sharedApplication] delegate];
+            [appDelegate showHomeView];
+        }
+    }];
 }
 
 - (IBAction)signUpSubmitBtnClicked:(id)sender {
@@ -143,9 +145,11 @@
     signUpApi.signUpDetails.password = self.signUpPasswordField.text;
     signUpApi.signUpDetails.mnumber = self.mobileNumber.text;
     signUpApi.signUpDetails.email = self.emailField.text;
+    signUpApi.apiType = Post;
+    signUpApi.cacheing = CACHE_PERSISTANT;
     
-    [[WebService sharedInstance] postRequest:signUpApi andCallback:^(APIBase *apiObject, id JSON, NSError *error) {
-        if ([signUpApi.errorCode isEqualToNumber:[NSNumber numberWithInteger:0]]) {
+    [[DataUtility sharedInstance] dataForObject:signUpApi response:^(APIBase *response, DataType dataType) {
+        if (signUpApi.errorCode == 0) {
             BrinDemoAppDelegate *appDelegate = (BrinDemoAppDelegate *)[[UIApplication sharedApplication] delegate];
             [appDelegate showHomeView];
         }

@@ -24,6 +24,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    [self initalizeDatabase];
     return YES;
 }
 							
@@ -77,5 +78,10 @@
     return UIInterfaceOrientationMaskLandscape;
 }
 
+- (void)initalizeDatabase
+{
+    [MagicalRecord setupCoreDataStackWithStoreNamed:@"BDModel.sqlite"];
+    [MagicalRecord setupAutoMigratingCoreDataStack];
+}
 
 @end

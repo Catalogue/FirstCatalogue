@@ -25,4 +25,6 @@
     #import "BDUtility.h"
     #import <CoreGraphics/CoreGraphics.h>
     #import "BrinDemoCollectionViewController.h"
+    #import <CoreData+MagicalRecord.h>
+    #import "DataUtility.h"
 #endif

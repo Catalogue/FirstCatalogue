@@ -12,22 +12,34 @@
 @implementation APIBase
 
 @synthesize statusCode;
-@synthesize message;
-@synthesize errormessage;
-@synthesize sessionId;
+@synthesize errorMessage;
 @synthesize errorCode;
-
+@synthesize parameters;
+@synthesize bodyParameters;
+@synthesize headerParams;
+@synthesize cacheTimeStamp;
+@synthesize contentType;
+@synthesize binaryData;
+@synthesize apiType;
+@synthesize cacheing;
 
 - (id)init
 {
     self = [super init];
     
     if (self) {
-        self.statusCode = [NSNumber numberWithInt:-1];
-        self.errorCode = nil;
-        self.message = nil;
-        self.errormessage = nil;
-        self.sessionId = nil;
+        self.statusCode = 0;
+        self.errorCode = 0;
+        self.apiType = Get;
+        self.errorMessage = nil;
+        self.parameters = [[NSMutableDictionary alloc]init];
+        self.bodyParameters = [[NSMutableDictionary alloc]init];
+        self.headerParams = [[NSMutableDictionary alloc]init];
+        [self.headerParams setObject:[[NSLocale preferredLanguages] objectAtIndex:0] forKey:@"Accept-Language"];
+        self.cacheTimeStamp = [NSDate date];
+        self.contentType = @"application/json";
+        self.binaryData = nil;
+        self.cacheing = CACHE_DISABLED;
     }
     
     return self;
@@ -53,12 +65,11 @@
 - (id)parseJsonObjectFromResponse:(id)response
 {
     if ([response respondsToSelector:@selector(objectForKey:)]) {
-        
         NSDictionary *responseDict = [ParserUtility JSONObjectValue:response forKey:kResult];
         
-        self.statusCode = [ParserUtility JSONObjectValue:responseDict forKey:kStatusCode];
-        self.errormessage = [ParserUtility JSONObjectValue:responseDict forKey:kStatusMessage];
-        self.errorCode = [ParserUtility JSONObjectValue:responseDict forKey:kErrorCode];
+        self.statusCode = [[ParserUtility JSONObjectValue:responseDict forKey:kStatusCode] integerValue];
+        self.errorMessage = [ParserUtility JSONObjectValue:responseDict forKey:kErrorMessage];
+        self.errorCode = [[ParserUtility JSONObjectValue:responseDict forKey:kErrorCode] integerValue];
     }
     
     return nil;
@@ -67,17 +78,23 @@
 
 - (void)displayError
 {
-    NSString *errorMessage = self.errormessage;
-    if (nil == errorMessage) {
-        errorMessage = NSLocalizedString(@"serverError", @"some error in server.");
+    NSString *displayErrorMessage = self.errorMessage;
+    if (nil == displayErrorMessage) {
+        displayErrorMessage = NSLocalizedString(@"serverError", @"some error in server.");
     }
-    [[HelperMethods sharedInstance] showAlertWithTitle:@"" message:errorMessage];
+    [[HelperMethods sharedInstance] showAlertWithTitle:@"" message:displayErrorMessage];
 }
 
 
 - (void)checkForNilValues
 {
-    self.sessionId = [ParserUtility checkForNilObjectAssignEmptyValue:self.sessionId];
+    
+}
+
+
+- (void)apiCallDone:(BOOL)isApiCallDone customizeResponseOrDoSomeJob:(APIBase *)apiObject
+{
+    ;
 }
 
 
