@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface HomeScreenDetails : NSObject
+@interface HomeScreenDetails : Jastor
 
 @end

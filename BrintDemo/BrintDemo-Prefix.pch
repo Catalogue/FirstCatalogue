@@ -27,4 +27,5 @@
     #import "BrinDemoCollectionViewController.h"
     #import <CoreData+MagicalRecord.h>
     #import "DataUtility.h"
+    #import "Jastor.h"
 #endif

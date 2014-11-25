@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface LoginDetails : NSObject
+@interface LoginDetails : Jastor
 
 @property (strong, nonatomic) NSString *username;
 @property (strong, nonatomic) NSString *email;
