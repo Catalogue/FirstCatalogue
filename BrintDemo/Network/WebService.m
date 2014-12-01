@@ -202,7 +202,8 @@ static WebService *webInstance;
     [[AFNetWorkAPIClient sharedClient] postPath:apiPath parameters:parameters  success:^(AFHTTPRequestOperation *operation, id JSON) {
         
         DBLog(@"JSON = %@",JSON);
-        [apiBase parseJsonObjectFromResponse:JSON];
+//        [apiBase parseJsonObjectFromResponse:JSON];
+        [self parseJsonUsingJastor:JSON withApiObject:apiBase];
         
         if (callback) {
             callback(apiBase, JSON, nil);
@@ -227,8 +228,9 @@ static WebService *webInstance;
     
     [[AFNetWorkAPIClient sharedClient] getPath:apiPath parameters:parameters  success:^(AFHTTPRequestOperation *operation, id JSON) {
         DBLog(@"JSON = %@",JSON);
-
-        [apiBase parseJsonObjectFromResponse:JSON];
+        [self parseJsonUsingJastor:JSON withApiObject:apiBase];
+        
+//        [apiBase parseJsonObjectFromResponse:JSON];
         
         callback(apiBase, JSON, nil);
         
@@ -277,5 +279,25 @@ static WebService *webInstance;
             break;
     }
 }
+
+
+- (void)parseJsonUsingJastor:(id)response withApiObject:(APIBase *)apiObject
+{
+    if (response) {
+        if (apiObject.responceArrayString != nil) {
+            
+            NSDictionary *jastorCompatibleDictionary = response;
+            if ([response isKindOfClass:[NSArray class]]) { // Outermost container is an array?
+                // as the responce is array Jastor needs in key-value pairs , so creating custom responce
+                jastorCompatibleDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:response, apiObject.responceArrayString, nil];
+            }
+            apiObject = [apiObject initWithDictionary :jastorCompatibleDictionary];
+        }
+        else {
+                apiObject = [apiObject initWithDictionary:response];
+        }
+    }
+}
+
 
 @end

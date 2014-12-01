@@ -143,6 +143,7 @@
 		27D6BB911A28F57F009A5FF6 /* CollectionDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D6BB901A28F57F009A5FF6 /* CollectionDetails.m */; };
 		27D6BB941A29015D009A5FF6 /* Products.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D6BB931A29015D009A5FF6 /* Products.m */; };
 		27D6BB971A290170009A5FF6 /* Items.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D6BB961A290170009A5FF6 /* Items.m */; };
+		27F599B81A2C994A0065845A /* ListOfItems.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F599B71A2C994A0065845A /* ListOfItems.m */; };
 		997F752B3FE92E34EE4636ED /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 805688D4D8FDC67E3F10BADC /* libPods.a */; };
 		ED1FF1FA197435D5000779E5 /* CSStickyHeaderFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = ED1FF1F7197435D5000779E5 /* CSStickyHeaderFlowLayout.m */; };
 		ED1FF1FB197435D5000779E5 /* CSStickyHeaderFlowLayoutAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = ED1FF1F9197435D5000779E5 /* CSStickyHeaderFlowLayoutAttributes.m */; };
@@ -428,6 +429,8 @@
 		27D6BB931A29015D009A5FF6 /* Products.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Products.m; sourceTree = SOURCE_ROOT; };
 		27D6BB951A290170009A5FF6 /* Items.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Items.h; sourceTree = SOURCE_ROOT; };
 		27D6BB961A290170009A5FF6 /* Items.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Items.m; sourceTree = SOURCE_ROOT; };
+		27F599B61A2C994A0065845A /* ListOfItems.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListOfItems.h; sourceTree = SOURCE_ROOT; };
+		27F599B71A2C994A0065845A /* ListOfItems.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListOfItems.m; sourceTree = SOURCE_ROOT; };
 		3CA8BBB43C41DBF5FDEC8399 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		805688D4D8FDC67E3F10BADC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B51E441F08B7ABC1E3055696 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -847,11 +850,13 @@
 				27D6BB8C1A28F2D6009A5FF6 /* CollectionsApi.m */,
 				27D6BB8F1A28F57F009A5FF6 /* CollectionDetails.h */,
 				27D6BB901A28F57F009A5FF6 /* CollectionDetails.m */,
-				27D6BB8E1A28F2EA009A5FF6 /* CollectionsApiKeys.h */,
+				27F599B61A2C994A0065845A /* ListOfItems.h */,
+				27F599B71A2C994A0065845A /* ListOfItems.m */,
 				27D6BB921A29015D009A5FF6 /* Products.h */,
 				27D6BB931A29015D009A5FF6 /* Products.m */,
 				27D6BB951A290170009A5FF6 /* Items.h */,
 				27D6BB961A290170009A5FF6 /* Items.m */,
+				27D6BB8E1A28F2EA009A5FF6 /* CollectionsApiKeys.h */,
 			);
 			path = CollectionsApi;
 			sourceTree = "<group>";
@@ -1596,6 +1601,7 @@
 				EDE56B9D194784CF00D68A33 /* SVSegmentedThumb.m in Sources */,
 				27C79CBA192E8ACA003681BE /* BrinDemoLoginViewController.m in Sources */,
 				27B094A519F060B900444D0E /* LoginApi.m in Sources */,
+				27F599B81A2C994A0065845A /* ListOfItems.m in Sources */,
 				27B2F5F6195D83D500E17939 /* BrinDemoSilverListViewController.m in Sources */,
 				ED3E277319D5DB4A00B02438 /* SDImageCache.m in Sources */,
 				27873A051940E9F100973989 /* BrinDemoDiamondMasterViewController.m in Sources */,

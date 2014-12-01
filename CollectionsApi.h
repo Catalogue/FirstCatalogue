@@ -8,18 +8,18 @@
 
 #import "APIBase.h"
 #import "CollectionsApiKeys.h"
-#import "CollectionDetails.h"
+//#import "CollectionDetails.h"
 
 @interface CollectionsApi : APIBase
 
-@property (strong, nonatomic) NSMutableArray *listOfItems;
+@property (nonatomic, strong) NSArray *listOfItems;
 
-@property (strong, nonatomic) NSMutableArray *productsArray;
-
-@property (strong, nonatomic) NSMutableArray *itemsArray;
-
+//@property (strong, nonatomic) NSMutableArray *productsArray;
+//
+//@property (strong, nonatomic) NSMutableArray *itemsArray;
+//
 @property (strong, nonatomic) NSMutableString *collectionApiName;
-
-@property (strong, nonatomic) CollectionDetails *collectionDetails;
+//
+//@property (strong, nonatomic) CollectionDetails *collectionDetails;
 
 @end

@@ -86,7 +86,7 @@
     }
     [[DataUtility sharedInstance] dataForObject:offersApi response:^(APIBase *response, DataType dataType) {
         if (offersApi.errorCode == 0) {
-            for (OffersDetails *offersDetails in offersApi.offersArray) {
+            for (OffersDetails *offersDetails in offersApi.offers) {
                     UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:offersDetails.offer_image]]];
                 if (image) {
                     [self.offersImagesArray addObject:image];

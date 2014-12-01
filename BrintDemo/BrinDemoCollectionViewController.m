@@ -19,6 +19,7 @@
 #import "BDGlassImageScroller.h"
 #import "CollectionsApi.h"
 #import "CollectionDetails.h"
+#import "ListOfItems.h"
 #import "Products.h"
 #import "Items.h"
 
@@ -77,16 +78,22 @@ NSString *const CSSearchBarHeaderIdentifier = @"CSSearchBarHeader";
 
     [[DataUtility sharedInstance] dataForObject:goldCollectionsApi response:^(APIBase *response, DataType dataType) {
         if (goldCollectionsApi.errorCode == 0) {
-            for (CollectionDetails *collectionsDetails in goldCollectionsApi.listOfItems) {
-                NSLog(@"Collections Details = %@", [collectionsDetails description]);
-                for (Products *products in collectionsDetails.products) {
-                    NSLog(@"Product Type = %@", products
-                          );
+            for (ListOfItems *listOfItems in goldCollectionsApi.listOfItems) {
+                NSLog(@"listOfItems Details = %@", listOfItems
+                      );
+                for (Products *products in listOfItems.products) {
+                    NSLog(@"Items name = %@", products.PT);
+                    
                     for (Items *items in products.items) {
                         NSLog(@"Items name = %@", items.name);
                     }
+                    
                 }
             }
+//            for (CollectionDetails *collectionsDetails in goldCollectionsApi.listOfItems) {
+//                NSLog(@"Collections Details = %@", [collectionsDetails description]);
+//                
+//            }
         }
     }];
 }

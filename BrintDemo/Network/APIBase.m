@@ -22,6 +22,9 @@
 @synthesize binaryData;
 @synthesize apiType;
 @synthesize cacheing;
+@synthesize responceArrayString;
+
+@synthesize Result;
 
 - (id)init
 {
@@ -31,10 +34,12 @@
         self.statusCode = 0;
         self.errorCode = 0;
         self.apiType = Get;
-        self.errorMessage = nil;
+        self.errorMessage = [[NSString alloc] init];
         self.parameters = [[NSMutableDictionary alloc]init];
         self.bodyParameters = [[NSMutableDictionary alloc]init];
         self.headerParams = [[NSMutableDictionary alloc]init];
+//        self.Result = [[NSMutableDictionary alloc] init];
+
         [self.headerParams setObject:[[NSLocale preferredLanguages] objectAtIndex:0] forKey:@"Accept-Language"];
         self.cacheTimeStamp = [NSDate date];
         self.contentType = @"application/json";
@@ -64,6 +69,9 @@
 
 - (id)parseJsonObjectFromResponse:(id)response
 {
+    
+    return nil;
+    
     if ([response respondsToSelector:@selector(objectForKey:)]) {
         NSDictionary *responseDict = [ParserUtility JSONObjectValue:response forKey:kResult];
         

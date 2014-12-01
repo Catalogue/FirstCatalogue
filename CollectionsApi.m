@@ -7,10 +7,18 @@
 //
 
 #import "CollectionsApi.h"
+#import "Products.h"
+#import "Items.h"
+#import "CollectionDetails.h"
+#import "CollectionsApiKeys.h"
+#import "ListOfItems.h"
 
 @implementation CollectionsApi
 
-@synthesize listOfItems, productsArray, itemsArray, collectionApiName, collectionDetails;
+
+@synthesize collectionApiName;
+@synthesize listOfItems;
+
 
 - (id)init
 {
@@ -48,44 +56,66 @@
     [super checkForNilValues];
 }
 
-
-- (id)parseJsonObjectFromResponse:(id)response
++ (Class)listOfItems_class
 {
-    [super parseJsonObjectFromResponse:response];
-    
-    collectionDetails = [[CollectionDetails alloc] init];
-    
-    if (response == [NSNull null]) {
-        return nil;
-    }
-    
-    if (API_SUCESS != self.statusCode) {
-        return nil;
-    }
-    
-    NSDictionary *responseDict = [ParserUtility JSONObjectValue:response forKey:kResult];
-    
-    if ([responseDict respondsToSelector:@selector(objectForKey:)]) {
-        NSMutableArray *array = [ParserUtility JSONObjectValue:responseDict forKey:kCollection_ListOfItems];
-        
-        if (nil != array && [array count]) {
-            self.listOfItems = [[NSMutableArray alloc] init];
-            for ( NSDictionary *homescreenDict in array) {
-                collectionDetails = [self parsedCollectionsDetails:homescreenDict];
-                [self.listOfItems addObject:collectionDetails];
-            }
-        }
-    }
-    
-    return nil;
+    return [ListOfItems class];
 }
 
-- (CollectionDetails *)parsedCollectionsDetails:(NSDictionary *)collectionsDict
-{
-    CollectionDetails *details = [[CollectionDetails alloc] init];
-    details.CT = [ParserUtility JSONObjectValue:collectionsDict forKey:kCategory_Type];
-    details.products = [ParserUtility JSONObjectValue:collectionsDict forKey:kProducts];
-    return details;
-}
+//- (id)parseJsonObjectFromResponse:(id)response
+//{
+//    [super parseJsonObjectFromResponse:response];
+//    
+//    return nil;
+//    
+//    collectionDetails = [[CollectionDetails alloc] init];
+//    
+//    if (response == [NSNull null]) {
+//        return nil;
+//    }
+//    
+//    if (API_SUCESS != self.statusCode) {
+//        return nil;
+//    }
+//    
+//    NSDictionary *responseDict = [ParserUtility JSONObjectValue:response forKey:kResult];
+//    
+//    if ([responseDict respondsToSelector:@selector(objectForKey:)]) {
+//        NSMutableArray *array = [ParserUtility JSONObjectValue:responseDict forKey:kCollection_ListOfItems];
+//        
+//        if (nil != array && [array count]) {
+//            self.listOfItems = [[NSMutableArray alloc] init];
+//            for ( NSDictionary *homescreenDict in array) {
+//                collectionDetails = [self parsedCollectionsDetails:homescreenDict];
+////                [self.listOfItems addObject:collectionDetails];
+//            }
+//        }
+//    }
+//    
+//    return nil;
+//}
+//
+//- (CollectionDetails *)parsedCollectionsDetails:(NSDictionary *)collectionsDict
+//{
+//    CollectionDetails *details = [[CollectionDetails alloc] init];
+//    details.CT = [ParserUtility JSONObjectValue:collectionsDict forKey:kCategory_Type];
+//    details.products = [ParserUtility JSONObjectValue:collectionsDict forKey:kProducts];
+////    
+////    for (NSDictionary *dict in details.products) {
+//////        Products *details = [self parseProductsFromResponse:dict];
+////    }
+//    
+//    return details;
+//}
+//
+//
+//- (Products *)parseProductsFromResponse:(NSDictionary *)dict
+//{
+//    
+//    Products *details = [[Products alloc] init];
+//    
+//    details.PT = [ParserUtility JSONObjectValue:dict forKey:kProduct_Type];
+//    
+//    return details;
+//}
 
 @end

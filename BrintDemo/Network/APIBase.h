@@ -16,6 +16,7 @@
 @property (nonatomic) NSInteger errorCode;
 @property (nonatomic) NSInteger statusCode;
 @property (nonatomic, strong) NSString *errorMessage;
+@property (nonatomic,strong) NSMutableDictionary *Result;
 @property (nonatomic,strong) NSMutableDictionary *parameters;
 @property (nonatomic,strong) NSMutableDictionary *bodyParameters;
 @property (nonatomic,strong) NSMutableDictionary *headerParams;
@@ -24,6 +25,8 @@
 @property (nonatomic, strong) NSData *binaryData;
 @property (nonatomic) HTTPMethodType apiType;
 @property (nonatomic) CachePolicy cacheing;
+@property (nonatomic,strong) NSString *responceArrayString;
+
 
 - (NSString *)apiName;
 

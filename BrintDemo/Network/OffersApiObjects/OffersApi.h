@@ -12,6 +12,6 @@
 
 @interface OffersApi : APIBase
 
-@property (strong, nonatomic) NSMutableArray *offersArray;
+@property (strong, nonatomic) NSArray *offers;
 
 @end

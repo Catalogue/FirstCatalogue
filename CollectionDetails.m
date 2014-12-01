@@ -7,20 +7,7 @@
 //
 
 #import "CollectionDetails.h"
-#import "Products.h"
 
 @implementation CollectionDetails
-
-@synthesize listOfItems;
-
-@synthesize CT;
-
-@synthesize products;
-
-+ (Class)products_class
-{
-    return [Products class];
-}
-
 
 @end

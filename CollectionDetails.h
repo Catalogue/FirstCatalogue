@@ -10,10 +10,4 @@
 
 @interface CollectionDetails : Jastor
 
-@property (nonatomic, strong) NSString *listOfItems;
-
-@property (nonatomic, strong) NSString *CT;
-
-@property (nonatomic, strong) NSArray *products;
-
 @end
