@@ -7,7 +7,6 @@
 //
 
 #import "BIHomeViewController.h"
-#import "HomePageController.h"
 #import "BDCollectionInfo.h"
 #import "BDCollectionView.h"
 

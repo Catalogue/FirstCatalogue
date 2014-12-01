@@ -30,5 +30,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *yesBtn;
 @property (weak, nonatomic) IBOutlet UIButton *nextBtn;
 @property (weak, nonatomic) IBOutlet UIButton *resetBtn;
+- (IBAction)logOutButtonClicked:(id)sender;
 
 @end

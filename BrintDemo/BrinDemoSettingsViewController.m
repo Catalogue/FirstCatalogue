@@ -197,4 +197,7 @@
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
+- (IBAction)logOutButtonClicked:(id)sender {
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
 @end

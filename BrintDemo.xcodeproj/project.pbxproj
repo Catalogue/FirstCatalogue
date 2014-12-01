@@ -37,7 +37,6 @@
 		2782592B193F9463000F944A /* mod@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 27825929193F9463000F944A /* mod@2x.png */; };
 		2782592E193F9686000F944A /* model2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2782592C193F9686000F944A /* model2.png */; };
 		2782592F193F9686000F944A /* model2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2782592D193F9686000F944A /* model2@2x.png */; };
-		278739E61940E7AB00973989 /* BrinDemoHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 278739E51940E7AB00973989 /* BrinDemoHomeViewController.m */; };
 		278739E91940E7D100973989 /* BrinDemoGoldSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 278739E81940E7D100973989 /* BrinDemoGoldSplitViewController.m */; };
 		278739F31940E95D00973989 /* BrinDemoDiamondSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 278739F21940E95D00973989 /* BrinDemoDiamondSplitViewController.m */; };
 		278739F61940E96D00973989 /* BrinDemoPlatinumSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 278739F51940E96D00973989 /* BrinDemoPlatinumSplitViewController.m */; };
@@ -184,8 +183,6 @@
 		ED7A1C74195CA8D100679B47 /* BDCollectionInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = ED7A1C73195CA8D100679B47 /* BDCollectionInfo.m */; };
 		ED7A1C77195CAD6F00679B47 /* BDCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = ED7A1C76195CAD6F00679B47 /* BDCollectionView.m */; };
 		ED7A1C7B195CADBE00679B47 /* BDCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED7A1C7A195CADBE00679B47 /* BDCollectionView.xib */; };
-		ED7A591A1959F1870068A83F /* HomePageController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED7A59181959F1870068A83F /* HomePageController.m */; };
-		ED7A591B1959F1870068A83F /* HomePageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED7A59191959F1870068A83F /* HomePageController.xib */; };
 		ED95F0CD19C76144008BEF26 /* GlassScrollerInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED95F0CC19C76144008BEF26 /* GlassScrollerInfoView.xib */; };
 		ED95F0D019C76172008BEF26 /* GlassScrollerInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = ED95F0CF19C76172008BEF26 /* GlassScrollerInfoView.m */; };
 		EDA8C697196AFC2E004DD093 /* BDCollectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = EDA8C696196AFC2E004DD093 /* BDCollectionHeaderView.m */; };
@@ -215,7 +212,6 @@
 		EDE56B8D19477EFC00D68A33 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDE56B8C19477EFC00D68A33 /* Home.storyboard */; };
 		EDE56B9C194784CF00D68A33 /* SVSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = EDE56B99194784CF00D68A33 /* SVSegmentedControl.m */; };
 		EDE56B9D194784CF00D68A33 /* SVSegmentedThumb.m in Sources */ = {isa = PBXBuildFile; fileRef = EDE56B9B194784CF00D68A33 /* SVSegmentedThumb.m */; };
-		EDE56BA1194793D900D68A33 /* BICollectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDE56BA0194793D900D68A33 /* BICollectionsViewController.m */; };
 		EDF208A8198DF8F5008B368B /* BDImageScrollerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EDF208A6198DF8F5008B368B /* BDImageScrollerVC.m */; };
 		EDF208A9198DF8F5008B368B /* BDImageScrollerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDF208A7198DF8F5008B368B /* BDImageScrollerVC.xib */; };
 		EDF208AC198E01BB008B368B /* BDScrollerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EDF208AB198E01BB008B368B /* BDScrollerCell.m */; };
@@ -277,8 +273,6 @@
 		27825929193F9463000F944A /* mod@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mod@2x.png"; sourceTree = "<group>"; };
 		2782592C193F9686000F944A /* model2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = model2.png; sourceTree = "<group>"; };
 		2782592D193F9686000F944A /* model2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "model2@2x.png"; sourceTree = "<group>"; };
-		278739E41940E7AB00973989 /* BrinDemoHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrinDemoHomeViewController.h; sourceTree = "<group>"; };
-		278739E51940E7AB00973989 /* BrinDemoHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrinDemoHomeViewController.m; sourceTree = "<group>"; };
 		278739E71940E7D100973989 /* BrinDemoGoldSplitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrinDemoGoldSplitViewController.h; sourceTree = "<group>"; };
 		278739E81940E7D100973989 /* BrinDemoGoldSplitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrinDemoGoldSplitViewController.m; sourceTree = "<group>"; };
 		278739F11940E95D00973989 /* BrinDemoDiamondSplitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrinDemoDiamondSplitViewController.h; sourceTree = "<group>"; };
@@ -505,9 +499,6 @@
 		ED7A1C75195CAD6F00679B47 /* BDCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDCollectionView.h; sourceTree = "<group>"; };
 		ED7A1C76195CAD6F00679B47 /* BDCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDCollectionView.m; sourceTree = "<group>"; };
 		ED7A1C7A195CADBE00679B47 /* BDCollectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BDCollectionView.xib; sourceTree = "<group>"; };
-		ED7A59171959F1870068A83F /* HomePageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageController.h; sourceTree = "<group>"; };
-		ED7A59181959F1870068A83F /* HomePageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageController.m; sourceTree = "<group>"; };
-		ED7A59191959F1870068A83F /* HomePageController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomePageController.xib; sourceTree = "<group>"; };
 		ED95F0CC19C76144008BEF26 /* GlassScrollerInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GlassScrollerInfoView.xib; sourceTree = "<group>"; };
 		ED95F0CE19C76172008BEF26 /* GlassScrollerInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlassScrollerInfoView.h; sourceTree = "<group>"; };
 		ED95F0CF19C76172008BEF26 /* GlassScrollerInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlassScrollerInfoView.m; sourceTree = "<group>"; };
@@ -554,8 +545,6 @@
 		EDE56B99194784CF00D68A33 /* SVSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVSegmentedControl.m; sourceTree = "<group>"; };
 		EDE56B9A194784CF00D68A33 /* SVSegmentedThumb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVSegmentedThumb.h; sourceTree = "<group>"; };
 		EDE56B9B194784CF00D68A33 /* SVSegmentedThumb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVSegmentedThumb.m; sourceTree = "<group>"; };
-		EDE56B9F194793D900D68A33 /* BICollectionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BICollectionsViewController.h; sourceTree = "<group>"; };
-		EDE56BA0194793D900D68A33 /* BICollectionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BICollectionsViewController.m; sourceTree = "<group>"; };
 		EDF208A5198DF8F5008B368B /* BDImageScrollerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDImageScrollerVC.h; sourceTree = "<group>"; };
 		EDF208A6198DF8F5008B368B /* BDImageScrollerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDImageScrollerVC.m; sourceTree = "<group>"; };
 		EDF208A7198DF8F5008B368B /* BDImageScrollerVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BDImageScrollerVC.xib; sourceTree = "<group>"; };
@@ -633,7 +622,6 @@
 			children = (
 				27470E491965EA2500EF4D06 /* ThirdParty */,
 				ED33547D194A2FA9004BDEC6 /* Tabbar */,
-				ED33546E194A2923004BDEC6 /* Gold VC */,
 				27CC4DB9194249CD00DC2034 /* BrinDemoMasterCell.h */,
 				27CC4DBA194249CD00DC2034 /* BrinDemoMasterCell.m */,
 				278739EF1940E82E00973989 /* Login */,
@@ -735,8 +723,6 @@
 			isa = PBXGroup;
 			children = (
 				EDE56B9E194793A900D68A33 /* Home */,
-				278739E41940E7AB00973989 /* BrinDemoHomeViewController.h */,
-				278739E51940E7AB00973989 /* BrinDemoHomeViewController.m */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -1092,13 +1078,6 @@
 			name = Diamond;
 			sourceTree = "<group>";
 		};
-		ED33546E194A2923004BDEC6 /* Gold VC */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "Gold VC";
-			sourceTree = "<group>";
-		};
 		ED335471194A2B72004BDEC6 /* Platinum */ = {
 			isa = PBXGroup;
 			children = (
@@ -1342,11 +1321,6 @@
 			children = (
 				27D4A7EE1A0BEAB300C7A94F /* BIHomeViewController.h */,
 				27D4A7EF1A0BEAB300C7A94F /* BIHomeViewController.m */,
-				EDE56B9F194793D900D68A33 /* BICollectionsViewController.h */,
-				EDE56BA0194793D900D68A33 /* BICollectionsViewController.m */,
-				ED7A59171959F1870068A83F /* HomePageController.h */,
-				ED7A59181959F1870068A83F /* HomePageController.m */,
-				ED7A59191959F1870068A83F /* HomePageController.xib */,
 				ED7A1C6D195C8FBC00679B47 /* BDColours.h */,
 				ED7A1C72195CA8D100679B47 /* BDCollectionInfo.h */,
 				ED7A1C73195CA8D100679B47 /* BDCollectionInfo.m */,
@@ -1521,7 +1495,6 @@
 				27236075196ACA8100CA26B4 /* closest-store-active.png in Resources */,
 				ED2AFBE4196EA6AA008DB914 /* BrinDemoCollectionViewController.xib in Resources */,
 				27C79CD7192FDF4C003681BE /* j2@2x.png in Resources */,
-				ED7A591B1959F1870068A83F /* HomePageController.xib in Resources */,
 				27CC4DD2194261DD00DC2034 /* RingBg.png in Resources */,
 				27CC4DCF194260DB00DC2034 /* Pattren.png in Resources */,
 				ED1FF1FD1974423C000779E5 /* CSSearchBarHeader.xib in Resources */,
@@ -1595,7 +1568,6 @@
 				ED3E277619D5DB4A00B02438 /* SDWebImageManager.m in Sources */,
 				ED3E277719D5DB4A00B02438 /* SDWebImagePrefetcher.m in Sources */,
 				278739F91940E98100973989 /* BrinDemoSilverSplitViewController.m in Sources */,
-				EDE56BA1194793D900D68A33 /* BICollectionsViewController.m in Sources */,
 				27B32DC4197A65B500C42D81 /* BDUtility.m in Sources */,
 				ED1FF1FB197435D5000779E5 /* CSStickyHeaderFlowLayoutAttributes.m in Sources */,
 				EDE56B9D194784CF00D68A33 /* SVSegmentedThumb.m in Sources */,
@@ -1610,7 +1582,6 @@
 				EDA8C69C196AFD10004DD093 /* BDCollectionCell.m in Sources */,
 				ED7A1C71195C978600679B47 /* iCarousel.m in Sources */,
 				ED3E277519D5DB4A00B02438 /* SDWebImageDownloader.m in Sources */,
-				278739E61940E7AB00973989 /* BrinDemoHomeViewController.m in Sources */,
 				27C79C86192E73CE003681BE /* BrinDemoViewController.m in Sources */,
 				27470E5B1965FE6800EF4D06 /* BrinDemoCollectionViewController.m in Sources */,
 				EDA8C6A1196AFEAF004DD093 /* BDCollectionFlowLayout.m in Sources */,
@@ -1643,7 +1614,6 @@
 				27873A0B1940EA3300973989 /* BrinDemoSilverMasterViewController.m in Sources */,
 				27C79C7D192E73CE003681BE /* BrinDemoAppDelegate.m in Sources */,
 				272515FC19FE6F1A008F355B /* HomeScreenDetails.m in Sources */,
-				ED7A591A1959F1870068A83F /* HomePageController.m in Sources */,
 				27AE5FA51976FC6E00A399B4 /* UIImage+FX.m in Sources */,
 				ED33547C194A2FA4004BDEC6 /* BrinDemoTabbarController.m in Sources */,
 				ED1FF1FA197435D5000779E5 /* CSStickyHeaderFlowLayout.m in Sources */,
