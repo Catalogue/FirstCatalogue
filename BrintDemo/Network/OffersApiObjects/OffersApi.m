@@ -52,6 +52,13 @@
     [super checkForNilValues];
 }
 
+
++ (Class)offers_class
+{
+    return [OffersDetails class];
+}
+
+
 //
 //- (id)parseJsonObjectFromResponse:(id)response
 //{
