@@ -12,7 +12,7 @@
 
 
 // Production server base url
-static NSString * const KBaseURL = @"http://brinvents.com/jewel/Apis/";
+static NSString * const KBaseURL = @"http://brinvents.com/jew/api/";
 
 static NSString * const kLoginApiUrl = @"loginclass.php";
 
@@ -20,7 +20,7 @@ static NSString * const kSignupApiUrl = @"signupclass.php";
 
 static NSString * const kForgotPasswordUrl = @"forgetpwdclass.php?";
 
-static NSString * const kHomeScreenApiUrl = @"ListOfHomeScreens/retrieve.json";
+static NSString * const kHomeScreenApiUrl = @"ListOfProducts/retrive.json?type=homeScreens";
 
 static NSString * const kOffersApiUrl = @"get_offers.php";
 

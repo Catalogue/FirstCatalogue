@@ -10,4 +10,6 @@
 
 @interface HomeScreenDetails : Jastor
 
+@property (strong, nonatomic) NSString *uri;
+
 @end

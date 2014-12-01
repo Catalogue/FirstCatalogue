@@ -1,16 +1,16 @@
 //
-//  HomeScreenApi.m
+//  CollectionsApi.m
 //  BrintDemo
 //
-//  Created by Pradeep on 27/10/14.
+//  Created by Pradeep on 28/11/14.
 //  Copyright (c) 2014 Pradeep. All rights reserved.
 //
 
-#import "HomeScreenApi.h"
+#import "CollectionsApi.h"
 
-@implementation HomeScreenApi
+@implementation CollectionsApi
 
-@synthesize listOfItems, homeScreenImagesArray, defaultHomeScreenImagesArray;
+@synthesize listOfItems, productsArray, itemsArray, collectionApiName, collectionDetails;
 
 - (id)init
 {
@@ -28,7 +28,7 @@
 
 - (NSString *)apiName
 {
-    return [NSString stringWithFormat:@"%@%@",[super apiName],kHomeScreenApiUrl];
+    return [NSString stringWithFormat:@"%@%@%@",[super apiName],kApiPrefix,collectionApiName];
 }
 
 
@@ -53,8 +53,8 @@
 {
     [super parseJsonObjectFromResponse:response];
     
-    HomeScreenDetails *details = [[HomeScreenDetails alloc] init];
-
+    collectionDetails = [[CollectionDetails alloc] init];
+    
     if (response == [NSNull null]) {
         return nil;
     }
@@ -66,13 +66,13 @@
     NSDictionary *responseDict = [ParserUtility JSONObjectValue:response forKey:kResult];
     
     if ([responseDict respondsToSelector:@selector(objectForKey:)]) {
-        NSMutableArray *array = [ParserUtility JSONObjectValue:responseDict forKey:kHomeScreensImages];
-
+        NSMutableArray *array = [ParserUtility JSONObjectValue:responseDict forKey:kCollection_ListOfItems];
+        
         if (nil != array && [array count]) {
-            self.homeScreenImagesArray = [[NSMutableArray alloc] init];
+            self.listOfItems = [[NSMutableArray alloc] init];
             for ( NSDictionary *homescreenDict in array) {
-                details = [self parsedHomeScreenDetails:homescreenDict];
-                [self.homeScreenImagesArray addObject:details];
+                collectionDetails = [self parsedCollectionsDetails:homescreenDict];
+                [self.listOfItems addObject:collectionDetails];
             }
         }
     }
@@ -80,10 +80,11 @@
     return nil;
 }
 
-- (HomeScreenDetails *)parsedHomeScreenDetails:(NSDictionary *)offersDict
+- (CollectionDetails *)parsedCollectionsDetails:(NSDictionary *)collectionsDict
 {
-    HomeScreenDetails *details = [[HomeScreenDetails alloc] init];
-    details.uri = [ParserUtility JSONObjectValue:offersDict forKey:kUri];
+    CollectionDetails *details = [[CollectionDetails alloc] init];
+    details.CT = [ParserUtility JSONObjectValue:collectionsDict forKey:kCategory_Type];
+    details.products = [ParserUtility JSONObjectValue:collectionsDict forKey:kProducts];
     return details;
 }
 

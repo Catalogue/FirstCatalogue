@@ -10,4 +10,6 @@
 
 @implementation HomeScreenDetails
 
+@synthesize uri;
+
 @end

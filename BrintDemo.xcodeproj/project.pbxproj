@@ -139,6 +139,10 @@
 		27CC4DD2194261DD00DC2034 /* RingBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 27CC4DD0194261DD00DC2034 /* RingBg.png */; };
 		27CC4DD3194261DD00DC2034 /* RingBg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 27CC4DD1194261DD00DC2034 /* RingBg@2x.png */; };
 		27D4A7F01A0BEAB300C7A94F /* BIHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D4A7EF1A0BEAB300C7A94F /* BIHomeViewController.m */; };
+		27D6BB8D1A28F2D6009A5FF6 /* CollectionsApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D6BB8C1A28F2D6009A5FF6 /* CollectionsApi.m */; };
+		27D6BB911A28F57F009A5FF6 /* CollectionDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D6BB901A28F57F009A5FF6 /* CollectionDetails.m */; };
+		27D6BB941A29015D009A5FF6 /* Products.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D6BB931A29015D009A5FF6 /* Products.m */; };
+		27D6BB971A290170009A5FF6 /* Items.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D6BB961A290170009A5FF6 /* Items.m */; };
 		997F752B3FE92E34EE4636ED /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 805688D4D8FDC67E3F10BADC /* libPods.a */; };
 		ED1FF1FA197435D5000779E5 /* CSStickyHeaderFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = ED1FF1F7197435D5000779E5 /* CSStickyHeaderFlowLayout.m */; };
 		ED1FF1FB197435D5000779E5 /* CSStickyHeaderFlowLayoutAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = ED1FF1F9197435D5000779E5 /* CSStickyHeaderFlowLayoutAttributes.m */; };
@@ -415,6 +419,15 @@
 		27CC4DD1194261DD00DC2034 /* RingBg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RingBg@2x.png"; sourceTree = "<group>"; };
 		27D4A7EE1A0BEAB300C7A94F /* BIHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BIHomeViewController.h; sourceTree = "<group>"; };
 		27D4A7EF1A0BEAB300C7A94F /* BIHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIHomeViewController.m; sourceTree = "<group>"; };
+		27D6BB8B1A28F2D6009A5FF6 /* CollectionsApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionsApi.h; sourceTree = SOURCE_ROOT; };
+		27D6BB8C1A28F2D6009A5FF6 /* CollectionsApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionsApi.m; sourceTree = SOURCE_ROOT; };
+		27D6BB8E1A28F2EA009A5FF6 /* CollectionsApiKeys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionsApiKeys.h; sourceTree = SOURCE_ROOT; };
+		27D6BB8F1A28F57F009A5FF6 /* CollectionDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionDetails.h; sourceTree = SOURCE_ROOT; };
+		27D6BB901A28F57F009A5FF6 /* CollectionDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionDetails.m; sourceTree = SOURCE_ROOT; };
+		27D6BB921A29015D009A5FF6 /* Products.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Products.h; sourceTree = SOURCE_ROOT; };
+		27D6BB931A29015D009A5FF6 /* Products.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Products.m; sourceTree = SOURCE_ROOT; };
+		27D6BB951A290170009A5FF6 /* Items.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Items.h; sourceTree = SOURCE_ROOT; };
+		27D6BB961A290170009A5FF6 /* Items.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Items.m; sourceTree = SOURCE_ROOT; };
 		3CA8BBB43C41DBF5FDEC8399 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		805688D4D8FDC67E3F10BADC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B51E441F08B7ABC1E3055696 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -830,6 +843,15 @@
 		27C4981B19E68EA5002CC2DD /* CollectionsApi */ = {
 			isa = PBXGroup;
 			children = (
+				27D6BB8B1A28F2D6009A5FF6 /* CollectionsApi.h */,
+				27D6BB8C1A28F2D6009A5FF6 /* CollectionsApi.m */,
+				27D6BB8F1A28F57F009A5FF6 /* CollectionDetails.h */,
+				27D6BB901A28F57F009A5FF6 /* CollectionDetails.m */,
+				27D6BB8E1A28F2EA009A5FF6 /* CollectionsApiKeys.h */,
+				27D6BB921A29015D009A5FF6 /* Products.h */,
+				27D6BB931A29015D009A5FF6 /* Products.m */,
+				27D6BB951A290170009A5FF6 /* Items.h */,
+				27D6BB961A290170009A5FF6 /* Items.m */,
 			);
 			path = CollectionsApi;
 			sourceTree = "<group>";
@@ -1577,6 +1599,7 @@
 				27B2F5F6195D83D500E17939 /* BrinDemoSilverListViewController.m in Sources */,
 				ED3E277319D5DB4A00B02438 /* SDImageCache.m in Sources */,
 				27873A051940E9F100973989 /* BrinDemoDiamondMasterViewController.m in Sources */,
+				27D6BB971A290170009A5FF6 /* Items.m in Sources */,
 				ED1FF20019744271000779E5 /* CSSearchBarHeader.m in Sources */,
 				EDA8C69C196AFD10004DD093 /* BDCollectionCell.m in Sources */,
 				ED7A1C71195C978600679B47 /* iCarousel.m in Sources */,
@@ -1593,6 +1616,7 @@
 				27470E471965E9F100EF4D06 /* Flickr.m in Sources */,
 				2769C9F81A1E9053005050E1 /* Jastor.m in Sources */,
 				278739E91940E7D100973989 /* BrinDemoGoldSplitViewController.m in Sources */,
+				27D6BB941A29015D009A5FF6 /* Products.m in Sources */,
 				27B094A219F060A000444D0E /* LoginDetails.m in Sources */,
 				27873A081940EA1100973989 /* BrinDemoPlatinumMasterViewController.m in Sources */,
 				EDC37861198FF9EA009BAF2C /* UATitledModalPanel.m in Sources */,
@@ -1629,6 +1653,7 @@
 				ED3E278219D5DD6300B02438 /* WebService.m in Sources */,
 				ED3E277819D5DB4A00B02438 /* UIButton+WebCache.m in Sources */,
 				EDAAA2D819A0E0BE003C3411 /* BTGlassScrollView.m in Sources */,
+				27D6BB911A28F57F009A5FF6 /* CollectionDetails.m in Sources */,
 				273A1D4D1A1D3ACB00EE833F /* DataUtility.m in Sources */,
 				ED3E277919D5DB4A00B02438 /* UIImageView+WebCache.m in Sources */,
 				EDF208AC198E01BB008B368B /* BDScrollerCell.m in Sources */,
@@ -1656,6 +1681,7 @@
 				ED7A1C74195CA8D100679B47 /* BDCollectionInfo.m in Sources */,
 				27B094A919F06DE700444D0E /* ForgotPasswordApi.m in Sources */,
 				EDAAA2E219A0E9CC003C3411 /* BDGlassImageScroller.m in Sources */,
+				27D6BB8D1A28F2D6009A5FF6 /* CollectionsApi.m in Sources */,
 				ED5366B8197C1A750025B774 /* BDCollectionItemInfo.m in Sources */,
 				275899FC19E7FC9B00BB28D0 /* ValidateApi.m in Sources */,
 				27C79C79192E73CE003681BE /* main.m in Sources */,

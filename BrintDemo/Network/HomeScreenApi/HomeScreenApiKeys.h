@@ -9,6 +9,10 @@
 #ifndef BrintDemo_HomeScreenApiKeys_h
 #define BrintDemo_HomeScreenApiKeys_h
 
-static NSString * const kHomeScreensImages = @"HomeScreenImages";
+static NSString * const kHomeScreensImages = @"listOfItems";
+
+static NSString * const kHomeScreensDefaultImages = @"defultImages";
+
+static NSString * const kUri = @"uri";
 
 #endif

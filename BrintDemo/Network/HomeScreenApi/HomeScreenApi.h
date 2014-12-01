@@ -12,6 +12,10 @@
 
 @interface HomeScreenApi : APIBase
 
-@property (strong, nonatomic) NSMutableArray *homeScreenArray;
+@property (strong, nonatomic) NSMutableArray *listOfItems;
+
+@property (strong, nonatomic) NSMutableArray *homeScreenImagesArray;
+
+@property (strong, nonatomic) NSMutableArray *defaultHomeScreenImagesArray;
 
 @end

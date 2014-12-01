@@ -17,7 +17,10 @@
 #import "BDCollectionDetailVC.h"
 #import "BDImageScrollerVC.h"
 #import "BDGlassImageScroller.h"
-
+#import "CollectionsApi.h"
+#import "CollectionDetails.h"
+#import "Products.h"
+#import "Items.h"
 
 @interface BrinDemoCollectionViewController ()
 
@@ -62,6 +65,30 @@ NSString *const CSSearchBarHeaderIdentifier = @"CSSearchBarHeader";
     
     [self searchResults];
     self.imagesArray = [[NSMutableArray alloc] initWithObjects:[UIImage imageNamed:@"g37.png"],[UIImage imageNamed:@"j4.png"],[UIImage imageNamed:@"j5.png"],[UIImage imageNamed:@"j6.png"],[UIImage imageNamed:@"j7.png"],[UIImage imageNamed:@"j8.png"],[UIImage imageNamed:@"j9.png"], nil];
+    [self callGoldCollectionApi];
+}
+
+- (void)callGoldCollectionApi
+{
+    CollectionsApi *goldCollectionsApi = [[CollectionsApi alloc] init];
+    goldCollectionsApi.apiType = Get;
+    goldCollectionsApi.cacheing = CACHE_PERSISTANT;
+    goldCollectionsApi.collectionApiName = [NSMutableString stringWithFormat:@"Gold"];
+
+    [[DataUtility sharedInstance] dataForObject:goldCollectionsApi response:^(APIBase *response, DataType dataType) {
+        if (goldCollectionsApi.errorCode == 0) {
+            for (CollectionDetails *collectionsDetails in goldCollectionsApi.listOfItems) {
+                NSLog(@"Collections Details = %@", [collectionsDetails description]);
+                for (Products *products in collectionsDetails.products) {
+                    NSLog(@"Product Type = %@", products
+                          );
+                    for (Items *items in products.items) {
+                        NSLog(@"Items name = %@", items.name);
+                    }
+                }
+            }
+        }
+    }];
 }
 
 

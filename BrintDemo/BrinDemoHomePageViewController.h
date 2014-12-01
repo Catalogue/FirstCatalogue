@@ -26,5 +26,6 @@
 @property (weak, nonatomic) IBOutlet UIView *costBgView;
 
 @property (strong, nonatomic) NSMutableArray *imagesArray;
+@property (strong, nonatomic) NSMutableArray *offersImagesArray;
 
 @end

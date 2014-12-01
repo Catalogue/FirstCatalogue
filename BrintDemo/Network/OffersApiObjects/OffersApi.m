@@ -31,7 +31,7 @@
 
 - (NSString *)apiName
 {
-    return [NSString stringWithFormat:@"%@%@",[super apiName],kHomeScreenApiUrl];
+    return [NSString stringWithFormat:@"%@%@",[super apiName],kOffersApiUrl];
 }
 
 

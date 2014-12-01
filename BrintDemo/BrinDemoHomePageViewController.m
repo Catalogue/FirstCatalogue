@@ -9,6 +9,7 @@
 #import "BrinDemoHomePageViewController.h"
 #import "HomeScreenApi.h"
 #import "WebService.h"
+#import "OffersApi.h"
 
 @interface BrinDemoHomePageViewController ()
 
@@ -16,6 +17,7 @@
 
 @implementation BrinDemoHomePageViewController
 @synthesize arrayOfImages;
+@synthesize offersImagesArray;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -38,6 +40,8 @@
     self.offersView.layer.cornerRadius = 6.0f;
     
     self.carousel.type = iCarouselTypeCylinder;
+    [self callOffersApi];
+
     [self callHomeScreensApi];
     [[BDUtility sharedInstance] addShadowToView:self.costBgView];
     [[BDUtility sharedInstance] addShadowToView:self.homeDetailView];
@@ -55,27 +59,43 @@
     
     [[DataUtility sharedInstance] dataForObject:homeScreensApi response:^(APIBase *response, DataType dataType) {
         if (homeScreensApi.errorCode == 0) {
-            for (HomeScreenDetails *homeScreensDetails in homeScreensApi.homeScreenArray) {
-                //            UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:offersDetails.offer_image]]];
-                [_imagesArray addObject:homeScreensDetails];
+            if (self.arrayOfImages) {
+                [self.arrayOfImages removeAllObjects];
+                self.arrayOfImages = [[NSMutableArray alloc] init];
             }
+            for (HomeScreenDetails *homescreenDetails in homeScreensApi.homeScreenImagesArray) {
+                UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:homescreenDetails.uri]]];
+                if (image) {
+                    [self.arrayOfImages addObject:image];
+                }
+            }
+            [self.carousel reloadData];
         }
     }];
 }
 
 
-//- (void)callOffersApi
-//{
-//    OffersApi *offersApi = [[OffersApi alloc] init];
-//    _imagesArray = [[NSMutableArray alloc] init];
-//    [[WebService sharedInstance] getRequest:offersApi andCallback:^(APIBase *apiObject, id JSON, NSError *error) {
-//        for (OffersDetails *offersDetails in offersApi.offersArray) {
-////            UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:offersDetails.offer_image]]];
-//            [_imagesArray addObject:offersDetails.offer_image];
-//        }
-////        [self offersImageAnimationWithImages:_imagesArray];
-//    }];
-//}
+- (void)callOffersApi
+{
+    OffersApi *offersApi = [[OffersApi alloc] init];
+    _imagesArray = [[NSMutableArray alloc] init];
+    offersApi.apiType = Get;
+    offersApi.cacheing = CACHE_PERSISTANT;
+    if (!self.offersImagesArray) {
+        self.offersImagesArray = [[NSMutableArray alloc] init];
+    }
+    [[DataUtility sharedInstance] dataForObject:offersApi response:^(APIBase *response, DataType dataType) {
+        if (offersApi.errorCode == 0) {
+            for (OffersDetails *offersDetails in offersApi.offersArray) {
+                    UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:offersDetails.offer_image]]];
+                if (image) {
+                    [self.offersImagesArray addObject:image];
+                }
+            }
+            [self offersImageAnimationWithImages:self.offersImagesArray];
+        }
+    }];
+}
 
 - (void)offersImageAnimationWithImages:(NSMutableArray *)imagesArray
 {

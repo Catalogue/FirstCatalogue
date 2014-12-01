@@ -57,7 +57,7 @@
                   symbolName = "-[BIHomeViewController loadOffersDetails]"
                   moduleName = "BrintDemo"
                   urlString = "file:///Users/pradeep/WorkSpace/Catalogue_WorkSpace/BrintDemo/BIHomeViewController.m"
-                  timestampString = "438603638.760826"
+                  timestampString = "438897927.022035"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "85"
@@ -71,7 +71,7 @@
                   symbolName = "__41-[BIHomeViewController loadOffersDetails]_block_invoke"
                   moduleName = "BrintDemo"
                   urlString = "file:///Users/pradeep/WorkSpace/Catalogue_WorkSpace/BrintDemo/BIHomeViewController.m"
-                  timestampString = "438603638.761031"
+                  timestampString = "438897927.022233"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "85"
@@ -79,22 +79,6 @@
                   offsetFromSymbolStart = "30">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BrintDemo/Network/HomeScreenApi/HomeScreenApi.m"
-            timestampString = "436990361.917206"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
-            landmarkName = "-parseJsonObjectFromResponse:"
-            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -151,13 +135,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BrintDemo/Utility Classes/DataUtility.m"
-            timestampString = "438209903.103883"
+            filePath = "BrintDemo/Network/WebService.m"
+            timestampString = "438615431.694564"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "-dataForObject:response:"
+            startingLineNumber = "237"
+            endingLineNumber = "237"
+            landmarkName = "-getRequest:andCallback:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -167,14 +151,44 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BrintDemo/Utility Classes/DataStorage.m"
-            timestampString = "438210202.904482"
+            filePath = "BrintDemo/BrinDemoCollectionViewController.m"
+            timestampString = "438897449.235152"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "-cachedApiObjectFor:"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "-callGoldCollectionApi"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[BrinDemoCollectionViewController callGoldCollectionApi]"
+                  moduleName = "BrintDemo"
+                  urlString = "file:///Users/pradeep/WorkSpace/Catalogue_WorkSpace/BrintDemo/BrinDemoCollectionViewController.m"
+                  timestampString = "438897927.150172"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "260">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__57-[BrinDemoCollectionViewController callGoldCollectionApi]_block_invoke"
+                  moduleName = "BrintDemo"
+                  urlString = "file:///Users/pradeep/WorkSpace/Catalogue_WorkSpace/BrintDemo/BrinDemoCollectionViewController.m"
+                  timestampString = "438897927.150483"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "102">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -183,13 +197,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BrintDemo/Utility Classes/DataStorage.m"
-            timestampString = "438212684.364198"
+            filePath = "BrintDemo/BrinDemoCollectionViewController.m"
+            timestampString = "438897449.096626"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
-            landmarkName = "-storeApiObjectInCache:"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "-callGoldCollectionApi"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface OffersDetails : NSObject
+@interface OffersDetails : Jastor
 
 @property (strong, nonatomic) NSString *jewellery_type;
 @property (strong, nonatomic) NSString *offer_type;
