@@ -117,20 +117,23 @@
 
 - (void)callLoginApi
 {
-    LoginApi *loginApi = [[LoginApi alloc] init];
-    loginApi.loginDetails = [[LoginDetails alloc] init];
-    loginApi.loginDetails.username = self.loginUsernameTxtField.text;
-    loginApi.loginDetails.password = self.loginPasswordTxtField.text;
-    loginApi.loginDetails.email = self.loginUsernameTxtField.text;
-    loginApi.apiType = Post;
-    loginApi.cacheing = CACHE_PERSISTANT;
-
-    [[DataUtility sharedInstance] dataForObject:loginApi response:^(APIBase *response, DataType dataType) {
-        if (loginApi.errorCode == 0) {
-            BrinDemoAppDelegate *appDelegate = (BrinDemoAppDelegate *)[[UIApplication sharedApplication] delegate];
-            [appDelegate showHomeView];
-        }
-    }];
+//    LoginApi *loginApi = [[LoginApi alloc] init];
+//    loginApi.loginDetails = [[LoginDetails alloc] init];
+//    loginApi.loginDetails.username = self.loginUsernameTxtField.text;
+//    loginApi.loginDetails.password = self.loginPasswordTxtField.text;
+//    loginApi.loginDetails.email = self.loginUsernameTxtField.text;
+//    loginApi.apiType = Post;
+//    loginApi.cacheing = CACHE_PERSISTANT;
+//
+//    [[DataUtility sharedInstance] dataForObject:loginApi response:^(APIBase *response, DataType dataType) {
+//        if (loginApi.errorCode == 0) {
+//            BrinDemoAppDelegate *appDelegate = (BrinDemoAppDelegate *)[[UIApplication sharedApplication] delegate];
+//            [appDelegate showHomeView];
+//        }
+//    }];
+    
+    BrinDemoAppDelegate *appDelegate = (BrinDemoAppDelegate *)[[UIApplication sharedApplication] delegate];
+    [appDelegate showHomeView];
 }
 
 - (IBAction)signUpSubmitBtnClicked:(id)sender {
