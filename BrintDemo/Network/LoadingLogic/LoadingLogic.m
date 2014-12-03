@@ -9,6 +9,7 @@
 #import "LoadingLogic.h"
 #import "OffersApi.h"
 #import "CollectionsApi.h"
+#import "HomeScreenApi.h"
 
 
 @implementation LoadingLogic
@@ -29,6 +30,8 @@ static LoadingLogic *loadingLogicSingleton = nil;
 
 - (void)startBackGroundLoading
 {
+    [self callHomeScreenApi];
+    
     [self callOffersApi];
     
     [self callCollectionApiForType:@"Gold"];
@@ -41,9 +44,7 @@ static LoadingLogic *loadingLogicSingleton = nil;
     apiObject.apiType = Get;
     apiObject.cacheing = CACHE_PERSISTANT;
 
-    [[DataUtility sharedInstance] apiDataForObject:apiObject response:^(APIBase *response, DataType dataType) {
-        ;
-    }];
+    [self makeApiCallForObject:apiObject];
 }
 
 
@@ -54,6 +55,22 @@ static LoadingLogic *loadingLogicSingleton = nil;
     apiObject.cacheing = CACHE_MEMORY;
     apiObject.collectionApiName = apiType;
     
+    [self makeApiCallForObject:apiObject];
+}
+
+
+- (void)callHomeScreenApi
+{
+    HomeScreenApi *apiObject = [[HomeScreenApi alloc] init];
+    apiObject.apiType = Get;
+    apiObject.cacheing = CACHE_PERSISTANT;
+    
+    [self makeApiCallForObject:apiObject];
+}
+
+
+- (void)makeApiCallForObject:(APIBase *)apiObject
+{
     [[DataUtility sharedInstance] apiDataForObject:apiObject response:^(APIBase *response, DataType dataType) {
         ;
     }];
