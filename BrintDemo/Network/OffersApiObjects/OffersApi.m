@@ -80,8 +80,9 @@
         
         if (nil != array && [array count]) {
             
-            for ( NSDictionary *offersDict in array) {
+            for (NSDictionary *offersDict in array) {
                 OffersDetails *details = [self parsedOffersDetails:offersDict];
+                [self.offers addObject:details];
             }
         }
     }
