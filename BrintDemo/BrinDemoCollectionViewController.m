@@ -18,7 +18,6 @@
 #import "BDImageScrollerVC.h"
 #import "BDGlassImageScroller.h"
 #import "CollectionsApi.h"
-#import "CollectionDetails.h"
 #import "ListOfItems.h"
 #import "Products.h"
 #import "Items.h"
@@ -90,10 +89,6 @@ NSString *const CSSearchBarHeaderIdentifier = @"CSSearchBarHeader";
                     
                 }
             }
-//            for (CollectionDetails *collectionsDetails in goldCollectionsApi.listOfItems) {
-//                NSLog(@"Collections Details = %@", [collectionsDetails description]);
-//                
-//            }
         }
     }];
 }

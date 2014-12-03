@@ -69,9 +69,6 @@
 
 - (id)parseJsonObjectFromResponse:(id)response
 {
-    
-    return nil;
-    
     if ([response respondsToSelector:@selector(objectForKey:)]) {
         NSDictionary *responseDict = [ParserUtility JSONObjectValue:response forKey:kResult];
         

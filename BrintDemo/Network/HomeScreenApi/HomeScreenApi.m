@@ -80,6 +80,7 @@
     return nil;
 }
 
+
 - (HomeScreenDetails *)parsedHomeScreenDetails:(NSDictionary *)offersDict
 {
     HomeScreenDetails *details = [[HomeScreenDetails alloc] init];

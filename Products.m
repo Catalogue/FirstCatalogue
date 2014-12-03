@@ -11,9 +11,22 @@
 
 @implementation Products
 
-@synthesize PT;
 
+@synthesize PT;
 @synthesize items;
+
+
+- (id)init
+{
+    self = [super init];
+    
+    if (self) {
+        self.items = [[NSMutableArray alloc] init];
+    }
+    
+    return self;
+}
+
 
 + (Class)items_class
 {

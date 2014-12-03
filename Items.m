@@ -8,22 +8,20 @@
 
 #import "Items.h"
 
+
 @implementation Items
 
-@synthesize name;
 
-@synthesize jewellery_type_name;
-
+@synthesize clarity_name;
+@synthesize color_name;
+@synthesize design_type_name;
 @synthesize gender_name;
-
+@synthesize jewellery_type_name;
+@synthesize name;
+@synthesize price;
+@synthesize ring_size_name;
+@synthesize uri;
 @synthesize wearing_style_name;
 
-@synthesize design_type_name;
-
-@synthesize uri;
-
-@synthesize color_name;
-
-@synthesize price;
 
 @end

@@ -11,7 +11,6 @@
 @interface Products : Jastor
 
 @property (nonatomic, strong) NSString *PT;
-
-@property (nonatomic, strong) NSArray *items;
+@property (nonatomic, strong) NSMutableArray *items;
 
 @end

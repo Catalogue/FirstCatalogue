@@ -202,8 +202,9 @@ static WebService *webInstance;
     [[AFNetWorkAPIClient sharedClient] postPath:apiPath parameters:parameters  success:^(AFHTTPRequestOperation *operation, id JSON) {
         
         DBLog(@"JSON = %@",JSON);
-//        [apiBase parseJsonObjectFromResponse:JSON];
-        [self parseJsonUsingJastor:JSON withApiObject:apiBase];
+        [apiBase parseJsonObjectFromResponse:JSON];
+        
+//        [self parseJsonUsingJastor:JSON withApiObject:apiBase];
         
         if (callback) {
             callback(apiBase, JSON, nil);
@@ -228,9 +229,10 @@ static WebService *webInstance;
     
     [[AFNetWorkAPIClient sharedClient] getPath:apiPath parameters:parameters  success:^(AFHTTPRequestOperation *operation, id JSON) {
         DBLog(@"JSON = %@",JSON);
-        [self parseJsonUsingJastor:JSON withApiObject:apiBase];
         
-//        [apiBase parseJsonObjectFromResponse:JSON];
+//        [self parseJsonUsingJastor:JSON withApiObject:apiBase];
+        
+        [apiBase parseJsonObjectFromResponse:JSON];
         
         callback(apiBase, JSON, nil);
         
@@ -260,7 +262,8 @@ static WebService *webInstance;
                 }
             }];
         }
-            break;
+        break;
+            
         case Post:{
             [self postRequest:apiBase andCallback:^(APIBase *apiBase, id JSON, NSError *error) {
                 if (callback) {
@@ -268,7 +271,8 @@ static WebService *webInstance;
                 }
             }];
         }
-            break;
+        break;
+            
         default:{
             [self getRequest:apiBase andCallback:^(APIBase *apiBase, id JSON, NSError *error) {
                 if (callback) {
@@ -276,7 +280,7 @@ static WebService *webInstance;
                 }
             }];
         }
-            break;
+        break;
     }
 }
 

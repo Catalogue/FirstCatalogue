@@ -11,7 +11,6 @@
 @interface ListOfItems : Jastor
 
 @property (nonatomic, strong) NSString *CT;
-
-@property (nonatomic, strong) NSArray *products;
+@property (nonatomic, strong) NSMutableArray *products;
 
 @end

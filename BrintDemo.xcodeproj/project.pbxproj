@@ -139,7 +139,6 @@
 		27CC4DD3194261DD00DC2034 /* RingBg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 27CC4DD1194261DD00DC2034 /* RingBg@2x.png */; };
 		27D4A7F01A0BEAB300C7A94F /* BIHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D4A7EF1A0BEAB300C7A94F /* BIHomeViewController.m */; };
 		27D6BB8D1A28F2D6009A5FF6 /* CollectionsApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D6BB8C1A28F2D6009A5FF6 /* CollectionsApi.m */; };
-		27D6BB911A28F57F009A5FF6 /* CollectionDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D6BB901A28F57F009A5FF6 /* CollectionDetails.m */; };
 		27D6BB941A29015D009A5FF6 /* Products.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D6BB931A29015D009A5FF6 /* Products.m */; };
 		27D6BB971A290170009A5FF6 /* Items.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D6BB961A290170009A5FF6 /* Items.m */; };
 		27F599B81A2C994A0065845A /* ListOfItems.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F599B71A2C994A0065845A /* ListOfItems.m */; };
@@ -417,8 +416,6 @@
 		27D6BB8B1A28F2D6009A5FF6 /* CollectionsApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionsApi.h; sourceTree = SOURCE_ROOT; };
 		27D6BB8C1A28F2D6009A5FF6 /* CollectionsApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionsApi.m; sourceTree = SOURCE_ROOT; };
 		27D6BB8E1A28F2EA009A5FF6 /* CollectionsApiKeys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionsApiKeys.h; sourceTree = SOURCE_ROOT; };
-		27D6BB8F1A28F57F009A5FF6 /* CollectionDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionDetails.h; sourceTree = SOURCE_ROOT; };
-		27D6BB901A28F57F009A5FF6 /* CollectionDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionDetails.m; sourceTree = SOURCE_ROOT; };
 		27D6BB921A29015D009A5FF6 /* Products.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Products.h; sourceTree = SOURCE_ROOT; };
 		27D6BB931A29015D009A5FF6 /* Products.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Products.m; sourceTree = SOURCE_ROOT; };
 		27D6BB951A290170009A5FF6 /* Items.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Items.h; sourceTree = SOURCE_ROOT; };
@@ -834,8 +831,6 @@
 			children = (
 				27D6BB8B1A28F2D6009A5FF6 /* CollectionsApi.h */,
 				27D6BB8C1A28F2D6009A5FF6 /* CollectionsApi.m */,
-				27D6BB8F1A28F57F009A5FF6 /* CollectionDetails.h */,
-				27D6BB901A28F57F009A5FF6 /* CollectionDetails.m */,
 				27F599B61A2C994A0065845A /* ListOfItems.h */,
 				27F599B71A2C994A0065845A /* ListOfItems.m */,
 				27D6BB921A29015D009A5FF6 /* Products.h */,
@@ -1629,7 +1624,6 @@
 				ED3E278219D5DD6300B02438 /* WebService.m in Sources */,
 				ED3E277819D5DB4A00B02438 /* UIButton+WebCache.m in Sources */,
 				EDAAA2D819A0E0BE003C3411 /* BTGlassScrollView.m in Sources */,
-				27D6BB911A28F57F009A5FF6 /* CollectionDetails.m in Sources */,
 				273A1D4D1A1D3ACB00EE833F /* DataUtility.m in Sources */,
 				ED3E277919D5DB4A00B02438 /* UIImageView+WebCache.m in Sources */,
 				EDF208AC198E01BB008B368B /* BDScrollerCell.m in Sources */,

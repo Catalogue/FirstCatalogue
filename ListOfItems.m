@@ -11,13 +11,27 @@
 
 @implementation ListOfItems
 
-@synthesize CT;
 
+@synthesize CT;
 @synthesize products;
+
+
+- (id)init
+{
+    self = [super init];
+    
+    if (self) {
+        self.products = [[NSMutableArray alloc] init];
+    }
+    
+    return self;
+}
+
 
 + (Class)products_class
 {
     return [Products class];
 }
+
 
 @end
