@@ -92,20 +92,21 @@
 {
     NSMutableArray *itemsList = [[NSMutableArray alloc] init];
     
-    
     NSMutableArray *array = [ParserUtility JSONObjectValue:responseDict forKey:kCollection_ListOfItems];
     
     for (NSDictionary *dict in array) {
         
-        ListOfItems *itemsList = [[ListOfItems alloc] init];
+        ListOfItems *listItem = [[ListOfItems alloc] init];
         
-        itemsList.CT = [ParserUtility JSONObjectValue:dict forKey:kCategory_Type];
+        listItem.CT = [ParserUtility JSONObjectValue:dict forKey:kCategory_Type];
         NSMutableArray *productsArray = [ParserUtility JSONObjectValue:dict forKey:kProducts];
         
         for (NSDictionary *dict in productsArray) {
             Products *details = [self parseProductsFromResponse:dict];
-            [itemsList.products addObject:details];
+            [listItem.products addObject:details];
         }
+        
+        [itemsList addObject:listItem];
     }
     
     return itemsList;

@@ -72,7 +72,7 @@ NSString *const CSSearchBarHeaderIdentifier = @"CSSearchBarHeader";
 {
     CollectionsApi *goldCollectionsApi = [[CollectionsApi alloc] init];
     goldCollectionsApi.apiType = Get;
-    goldCollectionsApi.cacheing = CACHE_PERSISTANT;
+    goldCollectionsApi.cacheing = CACHE_DISABLED;
     goldCollectionsApi.collectionApiName = [NSMutableString stringWithFormat:@"Gold"];
 
     [[DataUtility sharedInstance] dataForObject:goldCollectionsApi response:^(APIBase *response, DataType dataType) {

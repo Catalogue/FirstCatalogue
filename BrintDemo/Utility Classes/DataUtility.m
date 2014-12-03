@@ -136,7 +136,7 @@ static DataUtility *sharedInstance = nil;
     BOOL cacheEnabled = NO;
     
     if (!(apiObject.apiType == Put || apiObject.apiType == Delete)) {
-        if (!(apiObject.cacheing == REFRESH_MEMORY_CACHE || apiObject.cacheing == REFRESH_PERSISTANT_CACHE || apiObject.cacheing == CACHE_DISABLED )) {
+        if ( (apiObject.cacheing == REFRESH_MEMORY_CACHE || apiObject.cacheing == REFRESH_PERSISTANT_CACHE) ) {
             cacheEnabled = YES;
         }
     }
