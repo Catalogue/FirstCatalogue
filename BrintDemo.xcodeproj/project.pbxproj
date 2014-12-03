@@ -178,6 +178,7 @@
 		ED5366C0197C2F090025B774 /* orange_scalable@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED5366BE197C2F090025B774 /* orange_scalable@2x.png */; };
 		ED5366C3197C31720025B774 /* blue_scalable.png in Resources */ = {isa = PBXBuildFile; fileRef = ED5366C1197C31720025B774 /* blue_scalable.png */; };
 		ED5366C4197C31720025B774 /* blue_scalable@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED5366C2197C31720025B774 /* blue_scalable@2x.png */; };
+		ED737EE41A2F976A00C0B178 /* LoadingLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = ED737EE31A2F976A00C0B178 /* LoadingLogic.m */; };
 		ED7A1C71195C978600679B47 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = ED7A1C70195C978600679B47 /* iCarousel.m */; };
 		ED7A1C74195CA8D100679B47 /* BDCollectionInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = ED7A1C73195CA8D100679B47 /* BDCollectionInfo.m */; };
 		ED7A1C77195CAD6F00679B47 /* BDCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = ED7A1C76195CAD6F00679B47 /* BDCollectionView.m */; };
@@ -488,6 +489,8 @@
 		ED5366BE197C2F090025B774 /* orange_scalable@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "orange_scalable@2x.png"; sourceTree = "<group>"; };
 		ED5366C1197C31720025B774 /* blue_scalable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue_scalable.png; sourceTree = "<group>"; };
 		ED5366C2197C31720025B774 /* blue_scalable@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blue_scalable@2x.png"; sourceTree = "<group>"; };
+		ED737EE21A2F976A00C0B178 /* LoadingLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingLogic.h; sourceTree = "<group>"; };
+		ED737EE31A2F976A00C0B178 /* LoadingLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingLogic.m; sourceTree = "<group>"; };
 		ED7A1C6D195C8FBC00679B47 /* BDColours.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDColours.h; sourceTree = "<group>"; };
 		ED7A1C6F195C978600679B47 /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
 		ED7A1C70195C978600679B47 /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
@@ -1136,6 +1139,7 @@
 		ED3E277A19D5DD3600B02438 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				ED737EE11A2F973C00C0B178 /* LoadingLogic */,
 				275899F919E7FC8300BB28D0 /* ValidateApi */,
 				27C4981B19E68EA5002CC2DD /* CollectionsApi */,
 				27C4981C19E68EA5002CC2DD /* ForgotPasswordApi */,
@@ -1200,6 +1204,15 @@
 				ED5366BB197C21780025B774 /* NSString+LocalizedString.m */,
 			);
 			name = Categories;
+			sourceTree = "<group>";
+		};
+		ED737EE11A2F973C00C0B178 /* LoadingLogic */ = {
+			isa = PBXGroup;
+			children = (
+				ED737EE21A2F976A00C0B178 /* LoadingLogic.h */,
+				ED737EE31A2F976A00C0B178 /* LoadingLogic.m */,
+			);
+			path = LoadingLogic;
 			sourceTree = "<group>";
 		};
 		ED7A1C6E195C976500679B47 /* iCarousel */ = {
@@ -1581,6 +1594,7 @@
 				27470E5B1965FE6800EF4D06 /* BrinDemoCollectionViewController.m in Sources */,
 				EDA8C6A1196AFEAF004DD093 /* BDCollectionFlowLayout.m in Sources */,
 				27B2F5F5195D83D500E17939 /* BrinDemoPlatinumViewController.m in Sources */,
+				ED737EE41A2F976A00C0B178 /* LoadingLogic.m in Sources */,
 				276E96091A1B912B000E371D /* PICoreDataManager.m in Sources */,
 				EDCBAA70199BE9ED0057266A /* BDImageScrollerPanel.m in Sources */,
 				ED3E279719D6CFE500B02438 /* OffersDetails.m in Sources */,

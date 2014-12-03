@@ -12,6 +12,6 @@
 @interface CollectionsApi : APIBase
 
 @property (nonatomic, strong) NSArray *listOfItems;
-@property (strong, nonatomic) NSMutableString *collectionApiName;
+@property (strong, nonatomic) NSString *collectionApiName;
 
 @end

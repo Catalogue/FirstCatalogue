@@ -19,6 +19,7 @@
 @synthesize arrayOfImages;
 @synthesize offersImagesArray;
 
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -28,6 +29,7 @@
     }
     return self;
 }
+
 
 - (void)viewDidLoad
 {
@@ -97,6 +99,7 @@
     }];
 }
 
+
 - (void)offersImageAnimationWithImages:(NSMutableArray *)imagesArray
 {
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -123,16 +126,24 @@
     return [self.arrayOfImages count];
 }
 
-- (void)carousel:(iCarousel *)carousel didSelectItemAtIndex:(NSInteger)index{
+
+- (void)carousel:(iCarousel *)carousel didSelectItemAtIndex:(NSInteger)index
+{
     NSLog(@"Index == %li",(long)index);
 }
 
-- (void)carouselDidEndDecelerating:(iCarousel *)carousel{
+
+- (void)carouselDidEndDecelerating:(iCarousel *)carousel
+{
     NSLog(@"carousel currentItemAt Index = %li",(long)carousel.currentItemIndex);
 }
-- (void)carouselDidEndScrollingAnimation:(iCarousel *)carousel{
+
+
+- (void)carouselDidEndScrollingAnimation:(iCarousel *)carousel
+{
     NSLog(@"carousel currentItemAt Index = %li",(long)carousel.currentItemIndex);
 }
+
 
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSUInteger)index reusingView:(UIView *)view
 {
@@ -160,14 +171,19 @@
     return view;
 }
 
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)calculateBtnClicked:(id)sender {
+
+- (IBAction)calculateBtnClicked:(id)sender
+{
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Gold price" message:[NSString stringWithFormat:@"Selected gold price is"] delegate:self cancelButtonTitle:[NSString stringWithFormat:@"OK"] otherButtonTitles: nil];
     [alertView show];
 }
+
+
 @end
