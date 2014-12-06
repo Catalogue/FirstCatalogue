@@ -16,6 +16,10 @@
 
 
 static LoadingLogic *loadingLogicSingleton = nil;
+static NSString * const kGold = @"Gold";
+static NSString * const kDiamond = @"Diamond";
+static NSString * const kSilver = @"Silver";
+static NSString * const kPlatinum = @"Platinum";
 
 
 + (id)sharedLoadingLogic
@@ -30,23 +34,33 @@ static LoadingLogic *loadingLogicSingleton = nil;
 
 - (void)startBackGroundLoading
 {
-    [self callHomeScreenApi];
-    
-    [self callOffersApi];
-    
-    [self callCollectionApiForType:@"Gold"];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self callHomeScreenApi];
+    });
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self callOffersApi];
+    });
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self callCollectionApiForType:kGold];
+    });
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self callCollectionApiForType:kDiamond];
+    });
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self callCollectionApiForType:kPlatinum];
+    });
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self callCollectionApiForType:kSilver];
+    });
 }
-
 
 - (void)callOffersApi
 {
     OffersApi *apiObject = [[OffersApi alloc] init];
     apiObject.apiType = Get;
     apiObject.cacheing = CACHE_PERSISTANT;
-
     [self makeApiCallForObject:apiObject];
 }
-
 
 - (void)callCollectionApiForType:(NSString *)apiType
 {
@@ -58,7 +72,6 @@ static LoadingLogic *loadingLogicSingleton = nil;
     [self makeApiCallForObject:apiObject];
 }
 
-
 - (void)callHomeScreenApi
 {
     HomeScreenApi *apiObject = [[HomeScreenApi alloc] init];
@@ -67,7 +80,6 @@ static LoadingLogic *loadingLogicSingleton = nil;
     
     [self makeApiCallForObject:apiObject];
 }
-
 
 - (void)makeApiCallForObject:(APIBase *)apiObject
 {

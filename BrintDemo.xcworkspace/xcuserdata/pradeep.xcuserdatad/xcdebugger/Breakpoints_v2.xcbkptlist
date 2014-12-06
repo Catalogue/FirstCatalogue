@@ -19,22 +19,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BrintDemo/BrinDemoCollectionViewController.m"
-            timestampString = "439132791.023476"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
-            landmarkName = "-callGoldCollectionApi"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "BrintDemo/Network/WebService.m"
             timestampString = "439148325.449717"
             startingColumnNumber = "9223372036854775807"
@@ -83,12 +67,28 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BrintDemo/BrinDemoHomePageViewController.m"
-            timestampString = "439148351.675665"
+            filePath = "BrintDemo/Network/WebService.m"
+            timestampString = "439152768.478094"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
+            startingLineNumber = "286"
+            endingLineNumber = "286"
+            landmarkName = "@implementation WebService"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BrintDemo/Network/LoadingLogic/LoadingLogic.m"
+            timestampString = "439551286.580059"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
             landmarkName = "-callOffersApi"
             landmarkType = "5">
          </BreakpointContent>
@@ -99,14 +99,76 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BrintDemo/Network/WebService.m"
-            timestampString = "439152768.478094"
+            filePath = "BrintDemo/Network/LoadingLogic/LoadingLogic.m"
+            timestampString = "439551287.644096"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "286"
-            endingLineNumber = "286"
-            landmarkName = "-parseJsonUsingJastor:withApiObject:"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "-callCollectionApiForType:"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BrintDemo/Network/LoadingLogic/LoadingLogic.m"
+            timestampString = "439551290.356083"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "-callHomeScreenApi"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BrintDemo/Network/LoadingLogic/LoadingLogic.m"
+            timestampString = "439551294.652015"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "-makeApiCallForObject:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[LoadingLogic makeApiCallForObject:]"
+                  moduleName = "BrintDemo"
+                  urlString = "file:///Users/pradeep/WorkSpace/Catalogue_WorkSpace/BrintDemo/Network/LoadingLogic/LoadingLogic.m"
+                  timestampString = "439551311.87127"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "86"
+                  endingLineNumber = "86"
+                  offsetFromSymbolStart = "55">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__37-[LoadingLogic makeApiCallForObject:]_block_invoke"
+                  moduleName = "BrintDemo"
+                  urlString = "file:///Users/pradeep/WorkSpace/Catalogue_WorkSpace/BrintDemo/Network/LoadingLogic/LoadingLogic.m"
+                  timestampString = "439551311.871506"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "86"
+                  endingLineNumber = "86"
+                  offsetFromSymbolStart = "61">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

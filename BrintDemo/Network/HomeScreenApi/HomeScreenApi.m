@@ -84,7 +84,7 @@
 - (HomeScreenDetails *)parsedHomeScreenDetails:(NSDictionary *)offersDict
 {
     HomeScreenDetails *details = [[HomeScreenDetails alloc] init];
-    details.uri = [ParserUtility JSONObjectValue:offersDict forKey:kUri];
+    details.uri = [ParserUtility JSONObjectValue:offersDict forKey:kUrl];
     return details;
 }
 

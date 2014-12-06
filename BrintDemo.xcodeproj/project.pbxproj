@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		271A1DC41A3300F8008690A2 /* MZLoadingCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 271A1DC31A3300F8008690A2 /* MZLoadingCircle.m */; };
 		271FE64719785777004FAD80 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 271FE64619785777004FAD80 /* close.png */; };
 		271FE6491978579E004FAD80 /* close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 271FE6481978579E004FAD80 /* close@2x.png */; };
 		2723606D196ACA8100CA26B4 /* bg1.png in Resources */ = {isa = PBXBuildFile; fileRef = 27236061196ACA8100CA26B4 /* bg1.png */; };
@@ -230,6 +231,8 @@
 
 /* Begin PBXFileReference section */
 		2707306D1A0E1F2300FF31BF /* BrintDemo-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BrintDemo-Prefix.pch"; sourceTree = "<group>"; };
+		271A1DC21A3300F8008690A2 /* MZLoadingCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZLoadingCircle.h; sourceTree = "<group>"; };
+		271A1DC31A3300F8008690A2 /* MZLoadingCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZLoadingCircle.m; sourceTree = "<group>"; };
 		271FE64619785777004FAD80 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
 		271FE6481978579E004FAD80 /* close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close@2x.png"; sourceTree = "<group>"; };
 		27236061196ACA8100CA26B4 /* bg1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg1.png; sourceTree = "<group>"; };
@@ -583,6 +586,8 @@
 		27470E491965EA2500EF4D06 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				271A1DC21A3300F8008690A2 /* MZLoadingCircle.h */,
+				271A1DC31A3300F8008690A2 /* MZLoadingCircle.m */,
 				27AE5FA01976FC6E00A399B4 /* FXImageView.h */,
 				27AE5FA11976FC6E00A399B4 /* FXImageView.m */,
 				27AE5FA21976FC6E00A399B4 /* UIImage+FX.h */,
@@ -1574,6 +1579,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED3E277619D5DB4A00B02438 /* SDWebImageManager.m in Sources */,
+				271A1DC41A3300F8008690A2 /* MZLoadingCircle.m in Sources */,
 				ED3E277719D5DB4A00B02438 /* SDWebImagePrefetcher.m in Sources */,
 				278739F91940E98100973989 /* BrinDemoSilverSplitViewController.m in Sources */,
 				27B32DC4197A65B500C42D81 /* BDUtility.m in Sources */,

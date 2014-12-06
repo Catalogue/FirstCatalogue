@@ -13,15 +13,18 @@
 #import "SignUpApi.h"
 #import "LoginApi.h"
 #import "ForgotPasswordApi.h"
+#import "MZLoadingCircle.h"
+#import "LoadingLogic.h"
 
-@interface BrinDemoLoginViewController ()
+@interface BrinDemoLoginViewController (){
+    MZLoadingCircle *loadingCircle;
+}
 
 @property (weak, nonatomic) IBOutlet UIScrollView *loginScrollView;
 @property (weak, nonatomic) IBOutlet UIView *loginView;
 @property (weak, nonatomic) IBOutlet UIImageView *scrollViewImageView;
 
 @end
-
 
 @implementation BrinDemoLoginViewController
 
@@ -64,30 +67,6 @@
     self.forgotPasswordView.backgroundColor = [self.forgotPasswordView.backgroundColor colorWithAlphaComponent:0.6f];
 }
 
-- (void)backgroundImageAnimation
-{
-    dispatch_async(dispatch_get_main_queue(), ^{
-        NSMutableArray *emmaImagesArray = [[NSMutableArray alloc] initWithObjects:[UIImage imageNamed:@"mod.png"],[UIImage imageNamed:@"model2.png"],[UIImage imageNamed:@"LoginRingBg.png"], nil];
-        self.scrollViewImageView.animationImages = emmaImagesArray;
-        self.scrollViewImageView.animationDuration = 10.0;
-        self.scrollViewImageView.animationRepeatCount = 0;
-        
-        CATransition *transition = [CATransition animation];
-        transition.duration = 1.0f;
-        transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-        transition.type = kCATransitionFade;
-        
-        [self.scrollViewImageView.layer addAnimation:transition forKey:nil];
-        [self.scrollViewImageView startAnimating];
-    });
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (IBAction)loginButtonClicked:(id)sender
 {
     [self callLoginApi];
@@ -117,23 +96,21 @@
 
 - (void)callLoginApi
 {
-//    LoginApi *loginApi = [[LoginApi alloc] init];
-//    loginApi.loginDetails = [[LoginDetails alloc] init];
-//    loginApi.loginDetails.username = self.loginUsernameTxtField.text;
-//    loginApi.loginDetails.password = self.loginPasswordTxtField.text;
-//    loginApi.loginDetails.email = self.loginUsernameTxtField.text;
-//    loginApi.apiType = Post;
-//    loginApi.cacheing = CACHE_PERSISTANT;
-//
-//    [[DataUtility sharedInstance] dataForObject:loginApi response:^(APIBase *response, DataType dataType) {
-//        if (loginApi.errorCode == 0) {
-//            BrinDemoAppDelegate *appDelegate = (BrinDemoAppDelegate *)[[UIApplication sharedApplication] delegate];
-//            [appDelegate showHomeView];
-//        }
-//    }];
-    
-    BrinDemoAppDelegate *appDelegate = (BrinDemoAppDelegate *)[[UIApplication sharedApplication] delegate];
-    [appDelegate showHomeView];
+    LoginApi *loginApi = [[LoginApi alloc] init];
+    loginApi.loginDetails = [[LoginDetails alloc] init];
+    loginApi.loginDetails.username = self.loginUsernameTxtField.text;
+    loginApi.loginDetails.password = self.loginPasswordTxtField.text;
+    loginApi.loginDetails.email = self.loginUsernameTxtField.text;
+    loginApi.apiType = Post;
+    loginApi.cacheing = CACHE_PERSISTANT;
+
+    [[DataUtility sharedInstance] dataForObject:loginApi response:^(APIBase *response, DataType dataType) {
+        if (loginApi.errorCode == 0) {
+            [self showLoading];
+            [[LoadingLogic sharedLoadingLogic] startBackGroundLoading];
+            [self performSelector:@selector(pushToHomeScreen) withObject:nil afterDelay:20];
+        }
+    }];
 }
 
 - (IBAction)signUpSubmitBtnClicked:(id)sender {
@@ -153,10 +130,16 @@
     
     [[DataUtility sharedInstance] dataForObject:signUpApi response:^(APIBase *response, DataType dataType) {
         if (signUpApi.errorCode == 0) {
-            BrinDemoAppDelegate *appDelegate = (BrinDemoAppDelegate *)[[UIApplication sharedApplication] delegate];
-            [appDelegate showHomeView];
+            [self showLoading];
+            [self performSelector:@selector(pushToHomeScreen) withObject:nil afterDelay:20];
         }
     }];
+}
+
+- (void)pushToHomeScreen {
+    BrinDemoAppDelegate *appDelegate = (BrinDemoAppDelegate *)[[UIApplication sharedApplication] delegate];
+    [appDelegate showHomeView];
+    [self hideLoadingMode];
 }
 
 - (void)callValidateApi
@@ -191,4 +174,68 @@
         ;
     }];
 }
+
+-(void) showLoading{
+    if (!loadingCircle) {
+        [self showLoadingMode];
+    } else {
+        [self hideLoadingMode];
+    }
+}
+
+-(void)showLoadingMode {
+    if (!loadingCircle) {
+        loadingCircle = [[MZLoadingCircle alloc]initWithNibName:nil bundle:nil];
+        loadingCircle.view.backgroundColor = [UIColor clearColor];
+        
+        //Colors for layers
+        loadingCircle.colorCustomLayer = [UIColor colorWithRed:0 green:0.4 blue:0 alpha:1];
+        loadingCircle.colorCustomLayer2 = [UIColor colorWithRed:0 green:0.4 blue:0 alpha:0.65];
+        loadingCircle.colorCustomLayer3 = [UIColor colorWithRed:0 green:0.4 blue:0 alpha:0.4];
+        
+        int size = 100;
+        
+        CGRect frame = loadingCircle.view.frame;
+        frame.size.width = size ;
+        frame.size.height = size;
+        frame.origin.x = self.view.frame.size.width / 2 - frame.size.width / 2;
+        frame.origin.y = self.view.frame.size.height / 2 - frame.size.height / 2;
+        loadingCircle.view.frame = frame;
+        loadingCircle.view.layer.zPosition = MAXFLOAT;
+        [self.view addSubview: loadingCircle.view];
+    }
+}
+
+-(void)hideLoadingMode {
+    if (loadingCircle) {
+        [loadingCircle.view removeFromSuperview];
+        loadingCircle = nil;
+    }
+}
+
+
+- (void)backgroundImageAnimation
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        NSMutableArray *emmaImagesArray = [[NSMutableArray alloc] initWithObjects:[UIImage imageNamed:@"mod.png"],[UIImage imageNamed:@"model2.png"],[UIImage imageNamed:@"LoginRingBg.png"], nil];
+        self.scrollViewImageView.animationImages = emmaImagesArray;
+        self.scrollViewImageView.animationDuration = 10.0;
+        self.scrollViewImageView.animationRepeatCount = 0;
+        
+        CATransition *transition = [CATransition animation];
+        transition.duration = 1.0f;
+        transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+        transition.type = kCATransitionFade;
+        
+        [self.scrollViewImageView.layer addAnimation:transition forKey:nil];
+        [self.scrollViewImageView startAnimating];
+    });
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
 @end
