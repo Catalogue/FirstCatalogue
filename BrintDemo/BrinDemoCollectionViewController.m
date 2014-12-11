@@ -59,13 +59,10 @@ NSString *const CSSearchBarHeaderIdentifier = @"CSSearchBarHeader";
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
+    [self callGoldCollectionApi];
     [self initializeSearchView];
     [self initializeCollectionView];
-    
     [self searchResults];
-    self.imagesArray = [[NSMutableArray alloc] initWithObjects:[UIImage imageNamed:@"g37.png"],[UIImage imageNamed:@"j4.png"],[UIImage imageNamed:@"j5.png"],[UIImage imageNamed:@"j6.png"],[UIImage imageNamed:@"j7.png"],[UIImage imageNamed:@"j8.png"],[UIImage imageNamed:@"j9.png"], nil];
-    [self callGoldCollectionApi];
 }
 
 - (void)callGoldCollectionApi
@@ -77,18 +74,17 @@ NSString *const CSSearchBarHeaderIdentifier = @"CSSearchBarHeader";
 
     [[DataUtility sharedInstance] dataForObject:goldCollectionsApi response:^(APIBase *response, DataType dataType) {
         if (goldCollectionsApi.errorCode == 0) {
+            if (!self.imagesArray) {
+                self.imagesArray = [[NSMutableArray alloc] init];
+            }
             for (ListOfItems *listOfItems in goldCollectionsApi.listOfItems) {
-                NSLog(@"listOfItems Details = %@", listOfItems
-                      );
                 for (Products *products in listOfItems.products) {
-                    NSLog(@"Items name = %@", products.PT);
-                    
                     for (Items *items in products.items) {
-                        NSLog(@"Items name = %@", items.name);
+                        [self.imagesArray addObject:items.uri];
                     }
-                    
                 }
             }
+            [self reloadCollectionView];
         }
     }];
 }
@@ -96,7 +92,6 @@ NSString *const CSSearchBarHeaderIdentifier = @"CSSearchBarHeader";
 
 - (void)initializeSearchView
 {
-    
     itemSearchBar.placeholder = NSLocalizedString(@"Search", @"Search");
     itemSearchBar.backgroundColor = CLEAR_COLOR;
     [self.itemSearchBar setBackgroundImage:[[UIImage alloc] init]];
@@ -243,7 +238,7 @@ NSString *const CSSearchBarHeaderIdentifier = @"CSSearchBarHeader";
     
     cell.baseView.backgroundColor = WHITE_LIGHT;
     cell.backgroundColor = [UIColor clearColor];
-    cell.imageView.image = [self.imagesArray objectAtIndex:indexPath.row];
+    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:[self.imagesArray objectAtIndex:indexPath.row]] placeholderImage:[UIImage imageNamed:@"Placeholder.png"]];
     cell.baseView.layer.cornerRadius = 1.0f;
     [[BDUtility sharedInstance] addShadowToView:cell.baseView];
     [[BDUtility sharedInstance] addShadowToView:cell.imageView];

@@ -40,11 +40,11 @@
 
     self.homeDetailView.layer.cornerRadius = 6.0f;
     self.offersView.layer.cornerRadius = 6.0f;
-    
+    [self callHomeScreensApi];
+
     self.carousel.type = iCarouselTypeCylinder;
     [self callOffersApi];
 
-    [self callHomeScreensApi];
     [[BDUtility sharedInstance] addShadowToView:self.costBgView];
     [[BDUtility sharedInstance] addShadowToView:self.homeDetailView];
     [[BDUtility sharedInstance] addShadowToView:self.offersView];
@@ -61,15 +61,11 @@
     
     [[DataUtility sharedInstance] dataForObject:homeScreensApi response:^(APIBase *response, DataType dataType) {
         if (homeScreensApi.errorCode == 0) {
-            if (self.arrayOfImages) {
-                [self.arrayOfImages removeAllObjects];
+            if (!self.arrayOfImages) {
                 self.arrayOfImages = [[NSMutableArray alloc] init];
             }
             for (HomeScreenDetails *homescreenDetails in homeScreensApi.homeScreenImagesArray) {
-                UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:homescreenDetails.uri]]];
-                if (image) {
-                    [self.arrayOfImages addObject:image];
-                }
+                [self.arrayOfImages addObject:homescreenDetails.uri];
             }
             [self.carousel reloadData];
         }
@@ -89,10 +85,14 @@
     [[DataUtility sharedInstance] dataForObject:offersApi response:^(APIBase *response, DataType dataType) {
         if (offersApi.errorCode == 0) {
             for (OffersDetails *offersDetails in offersApi.offers) {
-                    UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:offersDetails.offer_image]]];
-                if (image) {
-                    [self.offersImagesArray addObject:image];
-                }
+
+                UIImageView *temp = [[UIImageView alloc] init];
+                [temp sd_setImageWithPreviousCachedImageWithURL:[NSURL URLWithString:offersDetails.offer_image] andPlaceholderImage:[UIImage imageNamed:@"loading.png"] options:SDWebImageRetryFailed progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+                } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                    if (image) {
+                        [self.offersImagesArray addObject:image];
+                    }
+                }];
             }
             [self offersImageAnimationWithImages:self.offersImagesArray];
         }
@@ -121,7 +121,7 @@
 
 - (NSUInteger)numberOfItemsInCarousel:(iCarousel *)carousel
 {
-    self.arrayOfImages = [[NSMutableArray alloc] initWithObjects:[UIImage imageNamed:@"banner1.png"],[UIImage imageNamed:@"banner2.png"],[UIImage imageNamed:@"banner3.png"],[UIImage imageNamed:@"banner4.png"],[UIImage imageNamed:@"banner5.png"],[UIImage imageNamed:@"banner6.png"], nil];
+//    self.arrayOfImages = [[NSMutableArray alloc] initWithObjects:[UIImage imageNamed:@"banner1.png"],[UIImage imageNamed:@"banner2.png"],[UIImage imageNamed:@"banner3.png"],[UIImage imageNamed:@"banner4.png"],[UIImage imageNamed:@"banner5.png"],[UIImage imageNamed:@"banner6.png"], nil];
 
     return [self.arrayOfImages count];
 }
@@ -162,11 +162,8 @@
         view = imageView;
     }
     
-    //show placeholder
-    ((FXImageView *)view).processedImage = [UIImage imageNamed:@"placeholder.png"];
-    
     //set image
-    ((FXImageView *)view).image = arrayOfImages[index];
+    [((FXImageView *)view) sd_setImageWithURL:arrayOfImages[index] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
     
     return view;
 }

@@ -108,7 +108,7 @@
         if (loginApi.errorCode == 0) {
             [self showLoading];
             [[LoadingLogic sharedLoadingLogic] startBackGroundLoading];
-            [self performSelector:@selector(pushToHomeScreen) withObject:nil afterDelay:20];
+            [self performSelector:@selector(pushToHomeScreen) withObject:nil afterDelay:6];
         }
     }];
 }

@@ -28,4 +28,5 @@
     #import <CoreData+MagicalRecord.h>
     #import "DataUtility.h"
     #import "Jastor.h"
+    #import <SDWebImage/UIImageView+WebCache.h>
 #endif
