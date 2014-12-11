@@ -43,7 +43,7 @@ NSString *const CSSearchBarHeaderIdentifier = @"CSSearchBarHeader";
 @synthesize selectedSearchOption;
 @synthesize dataSourceArray;
 @synthesize imagesArray;
-
+@synthesize collectionType;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -70,17 +70,21 @@ NSString *const CSSearchBarHeaderIdentifier = @"CSSearchBarHeader";
     CollectionsApi *goldCollectionsApi = [[CollectionsApi alloc] init];
     goldCollectionsApi.apiType = Get;
     goldCollectionsApi.cacheing = CACHE_MEMORY;
-    goldCollectionsApi.collectionApiName = [NSMutableString stringWithFormat:@"Gold"];
+    goldCollectionsApi.collectionApiName = [NSMutableString stringWithFormat:@"%@", self.collectionType];
 
     [[DataUtility sharedInstance] dataForObject:goldCollectionsApi response:^(APIBase *response, DataType dataType) {
         if (goldCollectionsApi.errorCode == 0) {
             if (!self.imagesArray) {
                 self.imagesArray = [[NSMutableArray alloc] init];
             }
+            if (!self.dataSourceArray) {
+                self.dataSourceArray = [[NSMutableArray alloc] init];
+            }
             for (ListOfItems *listOfItems in goldCollectionsApi.listOfItems) {
                 for (Products *products in listOfItems.products) {
                     for (Items *items in products.items) {
                         [self.imagesArray addObject:items.uri];
+                        [self.dataSourceArray addObject:items];
                     }
                 }
             }
@@ -138,24 +142,17 @@ NSString *const CSSearchBarHeaderIdentifier = @"CSSearchBarHeader";
     
     switch (selectedSearchOption) {
         case SearchItemByName: {
-            
             break;
         }
-            
         case SearchItemByValue: {
-            
             break;
         }
-            
         case SearchItemByMetal: {
-            
             break;
         }
-            
         default:
             break;
     }
-    
     [self searchResults];
 }
 
@@ -163,10 +160,6 @@ NSString *const CSSearchBarHeaderIdentifier = @"CSSearchBarHeader";
 
 - (void)initializeCollectionView
 {
-    // Allocate and configure the layout.
-    
-    // Register reusable items
-    
     [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([BDCollectionCell class]) bundle:nil]
      forCellWithReuseIdentifier:NSStringFromClass([BDCollectionCell class])];
     
@@ -199,8 +192,6 @@ NSString *const CSSearchBarHeaderIdentifier = @"CSSearchBarHeader";
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
 {
     BDCollectionHeaderView *view = nil;
-//    CSSearchBarHeader *searchHeaderView = nil;
-    
     if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
         view = (BDCollectionHeaderView *)[self.collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"BDCollectionHeaderView" forIndexPath:indexPath];
         
@@ -212,19 +203,8 @@ NSString *const CSSearchBarHeaderIdentifier = @"CSSearchBarHeader";
 
         return view;
     }
-    
-    
-//    else if ([kind isEqualToString:CSSearchBarHeaderIdentifier]) {
-//        searchHeaderView = (CSSearchBarHeader *)[collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:CSSearchBarHeaderIdentifier forIndexPath:indexPath];
-//        
-//        return searchHeaderView;
-//    }
-
     return nil;
 }
-
-
-
 #pragma mark -
 
 
@@ -233,8 +213,6 @@ NSString *const CSSearchBarHeaderIdentifier = @"CSSearchBarHeader";
     static NSString *cellIdentifier = @"BDCollectionCell";
     
     BDCollectionCell *cell = (BDCollectionCell *)[self.collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
-
-    // Store the image you get from url..
     
     cell.baseView.backgroundColor = WHITE_LIGHT;
     cell.backgroundColor = [UIColor clearColor];
@@ -275,11 +253,11 @@ NSString *const CSSearchBarHeaderIdentifier = @"CSSearchBarHeader";
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     BDCollectionItemInfo *itemInfo = nil;
-    NSMutableArray *detailArray = [dataSourceArray objectAtIndex:indexPath.section];
-    
-    if (indexPath.row < detailArray.count) {
-        itemInfo = [detailArray objectAtIndex:indexPath.row];
-    }
+//    NSMutableArray *detailArray = [dataSourceArray objectAtIndex:indexPath.section];
+//    
+//    if (indexPath.row < detailArray.count) {
+//        itemInfo = [detailArray objectAtIndex:indexPath.row];
+//    }
     
 //    BDCollectionDetailVC *detailVC = [[BDCollectionDetailVC alloc] init];
 //    detailVC.itemDetails = itemInfo;
@@ -293,6 +271,8 @@ NSString *const CSSearchBarHeaderIdentifier = @"CSSearchBarHeader";
 //    [self.navigationController pushViewController:imageScroller animated:YES];
     
     BDGlassImageScroller *imageScroller = [[BDGlassImageScroller alloc] init];
+    imageScroller.dataSourceArray = self.dataSourceArray;
+    imageScroller.currentPage = indexPath.row;
     [self.navigationController pushViewController:imageScroller animated:YES];
 }
 

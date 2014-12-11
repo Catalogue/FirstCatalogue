@@ -24,7 +24,7 @@
 
 @property (weak, nonatomic) IBOutlet UIView *itemDescriptionBgView;
 @property (weak, nonatomic) IBOutlet UITextView *itemDescriptionTextView;
-
+@property (strong, nonatomic) NSMutableArray *itemsArray;
 
 
 - (IBAction)addToCartButtonClicked:(id)sender;

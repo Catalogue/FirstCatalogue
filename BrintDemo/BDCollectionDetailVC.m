@@ -16,13 +16,14 @@
 @implementation BDCollectionDetailVC
 
 @synthesize itemDetails;
-
+@synthesize itemsArray;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        self.itemsArray = [[NSMutableArray alloc] init];
     }
     return self;
 }

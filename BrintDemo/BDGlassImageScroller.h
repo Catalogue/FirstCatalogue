@@ -12,7 +12,7 @@
 
 @property (strong, nonatomic) NSMutableArray *dataSourceArray;
 @property (strong, nonatomic) NSMutableArray *imagesArray;
-
+@property (nonatomic) NSInteger currentPage;
 @property (weak, nonatomic) IBOutlet UIScrollView *baseScrollView;
 
 @end

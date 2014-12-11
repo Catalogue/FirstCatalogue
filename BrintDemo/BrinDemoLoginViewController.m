@@ -217,7 +217,7 @@
 - (void)backgroundImageAnimation
 {
     dispatch_async(dispatch_get_main_queue(), ^{
-        NSMutableArray *emmaImagesArray = [[NSMutableArray alloc] initWithObjects:[UIImage imageNamed:@"mod.png"],[UIImage imageNamed:@"model2.png"],[UIImage imageNamed:@"LoginRingBg.png"], nil];
+        NSMutableArray *emmaImagesArray = [[NSMutableArray alloc] initWithObjects:[UIImage imageNamed:@"mod.png"],[UIImage imageNamed:@"model2.png"], nil];
         self.scrollViewImageView.animationImages = emmaImagesArray;
         self.scrollViewImageView.animationDuration = 10.0;
         self.scrollViewImageView.animationRepeatCount = 0;

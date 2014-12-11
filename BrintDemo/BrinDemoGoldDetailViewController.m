@@ -49,6 +49,7 @@
 - (void)pushCollectionView
 {
     BrinDemoCollectionViewController *collectionVC = [[BrinDemoCollectionViewController alloc] init];
+    collectionVC.collectionType = @"Gold";
     [self.navigationController pushViewController:collectionVC animated:YES];
 }
 

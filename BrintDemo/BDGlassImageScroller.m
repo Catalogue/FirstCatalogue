@@ -9,10 +9,10 @@
 #import "BDGlassImageScroller.h"
 #import "GlassScrollerInfoView.h"
 #import "BTGlassScrollView.h"
+#import "Items.h"
 
 @interface BDGlassImageScroller ()
 
-@property (nonatomic) NSInteger currentPage;
 @property (nonatomic) CGRect initialScrollFrame;
 
 @end
@@ -33,6 +33,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        self.dataSourceArray = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -50,9 +51,17 @@
     self.initialScrollFrame = self.baseScrollView.frame;
     
     self.baseScrollView.frame = CGRectMake(0, 0, self.baseScrollView.frame.size.width + imagesArray.count * blackSideBarWidth, self.baseScrollView.frame.size.height) ;
-    
-    self.imagesArray = [[NSMutableArray alloc] initWithObjects:[UIImage imageNamed:@"g37.png"],[UIImage imageNamed:@"j4.png"],[UIImage imageNamed:@"j5.png"],[UIImage imageNamed:@"j6.png"],[UIImage imageNamed:@"j7.png"],[UIImage imageNamed:@"j8.png"],[UIImage imageNamed:@"j9.png"], [UIImage imageNamed:@"g37.png"],[UIImage imageNamed:@"j4.png"],[UIImage imageNamed:@"j5.png"], nil];
-    
+    self.imagesArray = [[NSMutableArray alloc] init];
+
+    for (Items *items in self.dataSourceArray) {
+        UIImageView *temp = [[UIImageView alloc] init];
+        [temp sd_setImageWithPreviousCachedImageWithURL:[NSURL URLWithString:items.uri] andPlaceholderImage:[UIImage imageNamed:@"loading.png"] options:SDWebImageRetryFailed progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+        } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+            if (image) {
+                [self.imagesArray addObject:image];
+            }
+        }];
+    }
     [self reloadScrollView];
 }
 
@@ -76,9 +85,6 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
-    currentPage = 0;
-    
     [baseScrollView setContentSize:CGSizeMake(imagesArray.count * baseScrollView.frame.size.width, baseScrollView.frame.size.height)];
 }
 
@@ -145,7 +151,8 @@
     UIView *infoView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, width, hieght)];
     
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 20, width - 20, 100)];
-    [titleLabel setText:@"Item name"];
+    Items *item = [self.dataSourceArray objectAtIndex:index];
+    [titleLabel setText:item.name];
     [titleLabel setTextColor:[UIColor whiteColor]];
     [titleLabel setFont:[UIFont fontWithName:HELVETICA_LIGHT_FONT size:80]];
     [titleLabel setShadowColor:[UIColor blackColor]];

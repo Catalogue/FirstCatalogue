@@ -33,7 +33,7 @@ typedef struct searchBarFlags {
 @property (weak, nonatomic) IBOutlet UILabel *minValueLabel;
 @property (weak, nonatomic) IBOutlet UILabel *maxValueLabel;
 
-
+@property (nonatomic, strong) NSString *collectionType;
 @property (nonatomic) SearchBarFlags searchFlags;
 @property (nonatomic) CGFloat sliderRangeValue;
 @property (strong, nonatomic) NSMutableArray *searchListArray;
