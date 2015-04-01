@@ -12,6 +12,12 @@
 #define COCOAPODS_VERSION_MINOR_AFNetworking 3
 #define COCOAPODS_VERSION_PATCH_AFNetworking 4
 
+// IQKeyboardManager
+#define COCOAPODS_POD_AVAILABLE_IQKeyboardManager
+#define COCOAPODS_VERSION_MAJOR_IQKeyboardManager 3
+#define COCOAPODS_VERSION_MINOR_IQKeyboardManager 2
+#define COCOAPODS_VERSION_PATCH_IQKeyboardManager 2
+
 // MagicalRecord
 #define COCOAPODS_POD_AVAILABLE_MagicalRecord
 #define COCOAPODS_VERSION_MAJOR_MagicalRecord 2

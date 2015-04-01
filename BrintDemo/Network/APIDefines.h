@@ -12,7 +12,7 @@
 
 
 // Production server base url
-static NSString * const KBaseURL = @"http://brinvents.com/jew/api/";
+static NSString * const KBaseURL = @"http://brinvents.com/jewellery/api/";
 
 static NSString * const kLoginApiUrl = @"loginclass.php";
 

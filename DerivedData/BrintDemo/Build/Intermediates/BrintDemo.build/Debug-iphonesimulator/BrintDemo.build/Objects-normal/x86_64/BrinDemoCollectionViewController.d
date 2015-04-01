@@ -1,0 +1,21 @@
+dependencies: \
+  /Users/pradeep/WorkSpace/Catalogue_WorkSpace/BrintDemo/BrinDemoCollectionViewController.m \
+  /Users/pradeep/WorkSpace/Catalogue_WorkSpace/BrintDemo/BDCollectionCell.h \
+  /Users/pradeep/WorkSpace/Catalogue_WorkSpace/BrintDemo/BDCollectionFlowLayout.h \
+  /Users/pradeep/WorkSpace/Catalogue_WorkSpace/BrintDemo/BDCollectionHeaderView.h \
+  /Users/pradeep/WorkSpace/Catalogue_WorkSpace/BrintDemo/CSStickyHeaderFlowLayout.h \
+  /Users/pradeep/WorkSpace/Catalogue_WorkSpace/BrintDemo/CSSearchBarHeader.h \
+  /Users/pradeep/WorkSpace/Catalogue_WorkSpace/BrintDemo/SVSegmentedControl.h \
+  /Users/pradeep/WorkSpace/Catalogue_WorkSpace/BrintDemo/SVSegmentedThumb.h \
+  /Users/pradeep/WorkSpace/Catalogue_WorkSpace/BrintDemo/BDCollectionItemInfo.h \
+  /Users/pradeep/WorkSpace/Catalogue_WorkSpace/BrintDemo/BDCollectionDetailVC.h \
+  /Users/pradeep/WorkSpace/Catalogue_WorkSpace/BrintDemo/BDImageScrollerVC.h \
+  /Users/pradeep/WorkSpace/Catalogue_WorkSpace/BrintDemo/BDGlassImageScroller.h \
+  /Users/pradeep/WorkSpace/Catalogue_WorkSpace/CollectionsApi.h \
+  /Users/pradeep/WorkSpace/Catalogue_WorkSpace/BrintDemo/Network/APIBase.h \
+  /Users/pradeep/WorkSpace/Catalogue_WorkSpace/BrintDemo/Network/APIDefines.h \
+  /Users/pradeep/WorkSpace/Catalogue_WorkSpace/BrintDemo/Network/ParserUtility.h \
+  /Users/pradeep/WorkSpace/Catalogue_WorkSpace/CollectionsApiKeys.h \
+  /Users/pradeep/WorkSpace/Catalogue_WorkSpace/ListOfItems.h \
+  /Users/pradeep/WorkSpace/Catalogue_WorkSpace/Products.h \
+  /Users/pradeep/WorkSpace/Catalogue_WorkSpace/Items.h
