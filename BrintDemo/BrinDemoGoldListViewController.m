@@ -11,12 +11,12 @@
 #import "BrinDemoMasterCell.h"
 
 @interface BrinDemoGoldListViewController ()
-@property (nonatomic, retain) NSMutableArray *goldItemsListArray;
+@property(nonatomic, retain) NSMutableArray *goldItemsListArray;
 
-@property (nonatomic, retain) NSMutableArray *goldWomenItemsListArray;
-@property (nonatomic, retain) NSMutableArray *goldMenItemsListArray;
-@property (nonatomic, retain) NSMutableArray *goldKidsItemsListArray;
-@property (nonatomic, retain) NSMutableArray *goldOccasionItemsListArray;
+@property(nonatomic, retain) NSMutableArray *goldWomenItemsListArray;
+@property(nonatomic, retain) NSMutableArray *goldMenItemsListArray;
+@property(nonatomic, retain) NSMutableArray *goldKidsItemsListArray;
+@property(nonatomic, retain) NSMutableArray *goldOccasionItemsListArray;
 
 @end
 
@@ -25,94 +25,87 @@
 @synthesize selectedIndex;
 @synthesize selectedRow;
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+- (id)initWithStyle:(UITableViewStyle)style {
+  self = [super initWithStyle:style];
+  if (self) {
+    // Custom initialization
+  }
+  return self;
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
+- (void)viewDidLoad {
+  [super viewDidLoad];
 
-    self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg1.png"]];
+  self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg1.png"]];
 
-    self.goldMenItemsListArray = [[NSMutableArray alloc] initWithObjects:@"Ring",@"Chain",@"Pendant",@"Bracelite", nil];
+  self.goldMenItemsListArray = [[NSMutableArray alloc] initWithObjects:@"Ring", @"Chain", @"Pendant", @"Bracelite", nil];
 
-    self.goldWomenItemsListArray = [[NSMutableArray alloc] initWithObjects:@"Mangalsuthra",@"Necklace",@"Bangles",@"Earring",@"Ring",@"Chain",@"Pendant",@"Bracelite",@"Maang Tikka", nil];
+  self.goldWomenItemsListArray = [[NSMutableArray alloc] initWithObjects:@"Mangalsuthra", @"Necklace", @"Bangles", @"Earring", @"Ring", @"Chain", @"Pendant", @"Bracelite", @"Maang Tikka", nil];
 
-    self.goldKidsItemsListArray = [[NSMutableArray alloc] initWithObjects:@"Bangles",@"Earring",@"Ring",@"Chain",@"Pendant",@"Bracelite", @"Waist Chain", nil];
+  self.goldKidsItemsListArray = [[NSMutableArray alloc] initWithObjects:@"Bangles", @"Earring", @"Ring", @"Chain", @"Pendant", @"Bracelite", @"Waist Chain", nil];
 
-    self.goldOccasionItemsListArray = [[NSMutableArray alloc] initWithObjects:@"Daily Wear",@"Office Wear",@"Casual Wear",@"Party Wear", nil];
+  self.goldOccasionItemsListArray = [[NSMutableArray alloc] initWithObjects:@"Daily Wear", @"Office Wear", @"Casual Wear", @"Party Wear", nil];
 
-    self.goldItemsListArray = [[NSMutableArray alloc] init];
+  self.goldItemsListArray = [[NSMutableArray alloc] init];
 
-    switch (self.selectedIndex) {
-        case 0:
-            self.goldItemsListArray = self.goldWomenItemsListArray;
-            break;
-        case 1:
-            self.goldItemsListArray = self.goldMenItemsListArray;
-            break;
-        case 2:
-            self.goldItemsListArray = self.goldKidsItemsListArray;
-            break;
-        case 3:
-            self.goldItemsListArray = self.goldOccasionItemsListArray;
-            break;
-            
-        default:
-            break;
-    }
+  switch (self.selectedIndex) {
+  case 0:
+    self.goldItemsListArray = self.goldWomenItemsListArray;
+    break;
+  case 1:
+    self.goldItemsListArray = self.goldMenItemsListArray;
+    break;
+  case 2:
+    self.goldItemsListArray = self.goldKidsItemsListArray;
+    break;
+  case 3:
+    self.goldItemsListArray = self.goldOccasionItemsListArray;
+    break;
+
+  default:
+    break;
+  }
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg4.png"]];
+- (void)viewWillAppear:(BOOL)animated {
+  [super viewWillAppear:animated];
+  self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg4.png"]];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)didReceiveMemoryWarning {
+  [super didReceiveMemoryWarning];
+  // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    // Return the number of sections.
-    return 1;
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+  // Return the number of sections.
+  return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    // Return the number of rows in the section.
-    return [self.goldItemsListArray count];
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+  // Return the number of rows in the section.
+  return [self.goldItemsListArray count];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *cellIdentifier = @"BrinDemoMasterCell";
-    BrinDemoMasterCell * cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    
-    if (!cell) {
-        cell = [[NSBundle mainBundle] loadNibNamed:@"BrinDemoMasterCell" owner:self options:nil][0];
-    }
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    
-    //For transparent background view//
-    //    cell.contentView.backgroundColor = [cell.contentView.backgroundColor colorWithAlphaComponent:0.6f];
-    cell.contentView.backgroundColor = [UIColor colorWithRed:251.0f/255.0f green:221.0f/255.0f blue:157.0f/255.0f alpha:0.5f];
-    cell.bgImageView.layer.backgroundColor = (RGBACOLOR(249.0f, 206, 19, 1.0f).CGColor);
-    cell.bgImageView.layer.cornerRadius = 3.0f;
-    
-    cell.goldItemLable.text = [self.goldItemsListArray objectAtIndex:indexPath.row];
-    return cell;
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+  static NSString *cellIdentifier = @"BrinDemoMasterCell";
+  BrinDemoMasterCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+
+  if (!cell) {
+    cell = [[NSBundle mainBundle] loadNibNamed:@"BrinDemoMasterCell" owner:self options:nil][0];
+  }
+  cell.selectionStyle = UITableViewCellSelectionStyleNone;
+
+  //For transparent background view//
+  //    cell.contentView.backgroundColor = [cell.contentView.backgroundColor colorWithAlphaComponent:0.6f];
+  cell.contentView.backgroundColor = [UIColor colorWithRed:251.0f / 255.0f green:221.0f / 255.0f blue:157.0f / 255.0f alpha:0.5f];
+  cell.bgImageView.layer.backgroundColor = (RGBACOLOR(249.0f, 206, 19, 1.0f).CGColor);
+  cell.bgImageView.layer.cornerRadius = 3.0f;
+
+  cell.goldItemLable.text = [self.goldItemsListArray objectAtIndex:indexPath.row];
+  return cell;
 }
 
 /*
@@ -157,18 +150,16 @@
 #pragma mark - Navigation
 
 // In a story board-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-    BrinDemoGoldDetailsListViewController *goldDetailsListViewController = (BrinDemoGoldDetailsListViewController*)segue.destinationViewController;
-    goldDetailsListViewController.selectedIndex = self.selectedRow.row;
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+  // Get the new view controller using [segue destinationViewController].
+  // Pass the selected object to the new view controller.
+  BrinDemoGoldDetailsListViewController *goldDetailsListViewController = (BrinDemoGoldDetailsListViewController *)segue.destinationViewController;
+  goldDetailsListViewController.selectedIndex = self.selectedRow.row;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    self.selectedRow = indexPath;
-    [self performSegueWithIdentifier: @"GoldDetailsList" sender: self];
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+  self.selectedRow = indexPath;
+  //  [self performSegueWithIdentifier:@"GoldDetailsList" sender:self];
 }
 
 @end

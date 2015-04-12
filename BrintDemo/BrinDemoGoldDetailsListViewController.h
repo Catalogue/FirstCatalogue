@@ -10,6 +10,6 @@
 
 @interface BrinDemoGoldDetailsListViewController : UITableViewController
 
-@property (nonatomic) int selectedIndex;
+@property(nonatomic) NSInteger selectedIndex;
 
 @end

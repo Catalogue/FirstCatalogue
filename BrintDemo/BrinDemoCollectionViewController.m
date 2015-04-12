@@ -111,7 +111,7 @@ NSString *const CSSearchBarHeaderIdentifier = @"CSSearchBarHeader";
     SVSegmentedControl *yellowRC = [[SVSegmentedControl alloc] initWithSectionTitles:[NSArray arrayWithObjects:@"Price", @"Purity", @"Weight", nil]];
     [yellowRC addTarget:self action:@selector(segmentedControlChangedValue:) forControlEvents:UIControlEventValueChanged];
     
-    CGRect frame = CGRectMake((self.searchView.frame.size.width/2) - (self.searchView.frame.size.width/3), 110, 340, 30);
+    CGRect frame = CGRectMake((self.searchView.frame.size.width/2) - (self.searchView.frame.size.width/3), 60, 340, 30);
     
     yellowRC.frame = frame;
     
